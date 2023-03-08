@@ -1,0 +1,33 @@
+
+[12-Jan-2021 01:53:03 UTC] PHP Warning:  file_put_contents(docs/5ffd00ff938f6.png): failed to open stream: Permission denied in /home/u305973387/domains/laikerts.com/public_html/syscube/controlador/dashboard.php on line 80
+[12-Jan-2021 01:58:03 UTC] PHP Warning:  file_put_contents(docs/5ffd022b94da3.png): failed to open stream: Permission denied in /home/u305973387/domains/laikerts.com/public_html/syscube/controlador/dashboard.php on line 80
+[12-Jan-2021 03:10:53 UTC] PHP Warning:  Packets out of order. Expected 0 received 1. Packet size=23 in /home/u305973387/domains/laikerts.com/public_html/syscube/database/conexion.php on line 8
+[12-Jan-2021 03:10:53 UTC] PHP Warning:  mysqli::__construct(): MySQL server has gone away in /home/u305973387/domains/laikerts.com/public_html/syscube/database/conexion.php on line 8
+[12-Jan-2021 03:10:53 UTC] PHP Warning:  mysqli::__construct(): Error while reading greeting packet. PID=31872 in /home/u305973387/domains/laikerts.com/public_html/syscube/database/conexion.php on line 8
+[12-Jan-2021 03:10:53 UTC] PHP Warning:  mysqli::__construct(): (HY000/2006): MySQL server has gone away in /home/u305973387/domains/laikerts.com/public_html/syscube/database/conexion.php on line 8
+[12-Jan-2021 03:11:04 UTC] PHP Warning:  Packets out of order. Expected 0 received 1. Packet size=23 in /home/u305973387/domains/laikerts.com/public_html/syscube/database/conexion.php on line 8
+[12-Jan-2021 03:11:04 UTC] PHP Warning:  mysqli::__construct(): MySQL server has gone away in /home/u305973387/domains/laikerts.com/public_html/syscube/database/conexion.php on line 8
+[12-Jan-2021 03:11:04 UTC] PHP Warning:  mysqli::__construct(): Error while reading greeting packet. PID=36558 in /home/u305973387/domains/laikerts.com/public_html/syscube/database/conexion.php on line 8
+[12-Jan-2021 03:11:04 UTC] PHP Warning:  mysqli::__construct(): (HY000/2006): MySQL server has gone away in /home/u305973387/domains/laikerts.com/public_html/syscube/database/conexion.php on line 8
+[12-Jan-2021 03:12:40 UTC] PHP Notice:  Undefined variable: extension in /home/u305973387/domains/laikerts.com/public_html/syscube/controlador/dashboard.php on line 51
+[12-Jan-2021 03:13:32 UTC] PHP Notice:  Undefined variable: img in /home/u305973387/domains/laikerts.com/public_html/syscube/controlador/dashboard.php on line 51
+[12-Jan-2021 03:13:32 UTC] PHP Warning:  mime_content_type(): Can only process string or stream arguments in /home/u305973387/domains/laikerts.com/public_html/syscube/controlador/dashboard.php on line 51
+[12-Jan-2021 03:13:32 UTC] PHP Notice:  Undefined offset: 1 in /home/u305973387/domains/laikerts.com/public_html/syscube/controlador/dashboard.php on line 51
+[12-Jan-2021 03:14:28 UTC] PHP Notice:  Undefined variable: img in /home/u305973387/domains/laikerts.com/public_html/syscube/controlador/dashboard.php on line 51
+[12-Jan-2021 03:14:28 UTC] PHP Warning:  mime_content_type(): Can only process string or stream arguments in /home/u305973387/domains/laikerts.com/public_html/syscube/controlador/dashboard.php on line 51
+[12-Jan-2021 03:14:28 UTC] PHP Notice:  Undefined offset: 1 in /home/u305973387/domains/laikerts.com/public_html/syscube/controlador/dashboard.php on line 51
+[18-Jan-2021 00:40:12 UTC] PHP Notice:  Undefined property: stdClass::$result in /home/u305973387/domains/laikerts.com/public_html/syscube/controlador/perfil.php on line 46
+[18-Jan-2021 00:40:12 UTC] PHP Warning:  mime_content_type(): Can only process string or stream arguments in /home/u305973387/domains/laikerts.com/public_html/syscube/controlador/perfil.php on line 46
+[18-Jan-2021 00:40:12 UTC] PHP Notice:  Undefined offset: 1 in /home/u305973387/domains/laikerts.com/public_html/syscube/controlador/perfil.php on line 46
+[18-Jan-2021 00:40:13 UTC] PHP Notice:  Undefined property: stdClass::$result in /home/u305973387/domains/laikerts.com/public_html/syscube/controlador/perfil.php on line 46
+[18-Jan-2021 00:40:13 UTC] PHP Warning:  mime_content_type(): Can only process string or stream arguments in /home/u305973387/domains/laikerts.com/public_html/syscube/controlador/perfil.php on line 46
+[18-Jan-2021 00:40:13 UTC] PHP Notice:  Undefined offset: 1 in /home/u305973387/domains/laikerts.com/public_html/syscube/controlador/perfil.php on line 46
+[18-Jan-2021 00:48:51 UTC] PHP Notice:  Undefined property: stdClass::$result in /home/u305973387/domains/laikerts.com/public_html/syscube/controlador/perfil.php on line 46
+[18-Jan-2021 00:48:51 UTC] PHP Warning:  mime_content_type(): Can only process string or stream arguments in /home/u305973387/domains/laikerts.com/public_html/syscube/controlador/perfil.php on line 46
+[18-Jan-2021 00:48:51 UTC] PHP Notice:  Undefined offset: 1 in /home/u305973387/domains/laikerts.com/public_html/syscube/controlador/perfil.php on line 46
+[28-May-2021 01:29:10 UTC] PHP Notice:  Undefined property: stdClass::$result in /home/u305973387/domains/laikerts.com/public_html/syscube/controlador/perfil.php on line 46
+[28-May-2021 01:29:10 UTC] PHP Warning:  mime_content_type(): Can only process string or stream arguments in /home/u305973387/domains/laikerts.com/public_html/syscube/controlador/perfil.php on line 46
+[28-May-2021 01:29:10 UTC] PHP Notice:  Undefined offset: 1 in /home/u305973387/domains/laikerts.com/public_html/syscube/controlador/perfil.php on line 46
+[28-May-2021 01:29:13 UTC] PHP Notice:  Undefined property: stdClass::$result in /home/u305973387/domains/laikerts.com/public_html/syscube/controlador/perfil.php on line 46
+[28-May-2021 01:29:13 UTC] PHP Warning:  mime_content_type(): Can only process string or stream arguments in /home/u305973387/domains/laikerts.com/public_html/syscube/controlador/perfil.php on line 46
+[28-May-2021 01:29:13 UTC] PHP Notice:  Undefined offset: 1 in /home/u305973387/domains/laikerts.com/public_html/syscube/controlador/perfil.php on line 46
