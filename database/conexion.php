@@ -1,7 +1,7 @@
 <?php
     $conexion = "127.0.0.1";
         $user = "root";
-        $pass = "";
+        $pass = "12345";
         $server = "localhost";
         $db = "bodega";
         
