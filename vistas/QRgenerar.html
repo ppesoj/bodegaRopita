@@ -20,14 +20,14 @@
 			element: $imagen,
 			value: "bodegaRopa_camisa_levis_roja_adulto_hombre_t12", // La URL o el texto a transformar en QR
 			size: 500,
-			backgroundAlpha: 0, // 0 para fondo transparente
-			foreground: "#8bc34a", // Color del QR
+			backgroundAlpha: 100, // 0 para fondo transparente
+			foreground: "#000000", // Color del QR
 			level: "H", // Puede ser L,M,Q y H (L es el de menor nivel, H el mayor)
 		});
 		$boton.onclick = () => {
 			const enlace = document.createElement("a");
 			enlace.href = $imagen.src;
-			enlace.download = "Código QR generado desde parzibyte.me.png";
+			enlace.download = "bodegaRopa_camisa_levis_roja_adulto_hombre_t12";
 			enlace.click();
 		}
     </script>
