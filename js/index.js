@@ -20,22 +20,22 @@ function mostrarRopa () {
 
                 //insertar la ropita a la tabla               
                     var objNoticias = respuesta;
+                    const dataSet = [];
                     Object.keys(objNoticias.data).forEach((key, index) => {
-                        //console.log(objNoticias.data[index]);
-                        var miniatura = `
-                            <tr>
-                                <td>
-                                    <img src="controlador/docs/ropa/${objNoticias.data[index].foto}" style="width: 8rem;" >
-                                </td>
-                                <td>${objNoticias.data[index].modelo}</td>
-                                <td>${objNoticias.data[index].codigo}</td>
-                                <td>${objNoticias.data[index].descripcion}</td>
-                                <td>${objNoticias.data[index].precio}</td>
-                                <td>${objNoticias.data[index].precioOferta}</td>
-                            </tr>
-                        `;
-                        $("#cuerpoCatalogo").append(miniatura);
+                        dataSet.push(Object.values(objNoticias.data[index]));
                     });
+
+                    console.log(dataSet);
+                    $('#myTable').DataTable( {
+                        data: dataSet,
+                        columnDefs: [{
+                            "targets": 0,
+                            "render": function (data, type, row) {
+                                var checkbox = '<img src="controlador/docs/ropa/'+data+'" style="width: 10em;">';
+                                return checkbox;
+                            }
+                        }],
+                    } );
 
 
             }else {
@@ -50,18 +50,18 @@ function mostrarRopa () {
 
 $(buscar_datos());
 function buscar_datos(consulta){
-    $.ajax({
-        url: 'controlador/buscar.php',
-        type: 'POST',
-        dataType: 'html',
-        data: {consulta: consulta},
-    })
-    .done(function(respuesta){
-        $("#datos").html(respuesta);
-    })
-    .fail(function(){
-        console.log("error");
-    })
+    // $.ajax({
+    //     url: 'controlador/buscar.php',
+    //     type: 'POST',
+    //     dataType: 'html',
+    //     data: {consulta: consulta},
+    // })
+    // .done(function(respuesta){
+    //     $("#datos").html(respuesta);
+    // })
+    // .fail(function(){
+    //     console.log("error");
+    // })
 }
 $(document).on('keyup','#caja_busqueda', function(){
     var valor = $(this).val();

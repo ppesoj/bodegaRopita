@@ -7,7 +7,7 @@
     ini_set('display_startup_errors', '1');
     error_reporting(E_ALL);
 
-    $recoger = "SELECT * FROM productos;";
+    $recoger = "SELECT foto, modelo, codigo, cantidad, precio FROM productos;";
     $nvConexion = nuevaConexion();
     $query_obtener = mysqli_query($nvConexion, $recoger);
     if (!$query_obtener) {
