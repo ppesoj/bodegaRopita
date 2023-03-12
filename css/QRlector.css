@@ -1,0 +1,44 @@
+body {
+    position: relative;
+    background-color: #0e0e0e;
+    background-blend-mode: soft-light;
+    background-image: url(../img/hipster-ropa-moda-doodle-patron_1284-6445.webp);
+  }
+
+  #githubLink {
+    position: absolute;
+    right: 0;
+    top: 12px;
+    color: #2D99FF;
+  }
+
+  h1 {
+    margin: 10px 0;
+    font-size: 40px;
+  }
+
+  #loadingMessage {
+    text-align: center;
+    padding: 40px;
+    background-color: #eee;
+  }
+
+  #canvas {
+    width: 100%;
+  }
+
+  #output {
+    margin-top: 20px;
+    background: #eee;
+    padding: 10px;
+    padding-bottom: 0;
+  }
+
+  #output div {
+    padding-bottom: 10px;
+    word-wrap: break-word;
+  }
+
+  #noQRFound {
+    text-align: center;
+  }
