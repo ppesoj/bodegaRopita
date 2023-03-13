@@ -11,7 +11,7 @@
 
 
     if($accionCatalogo == "mostrarRopa") {
-        $recoger = "SELECT foto, modelo, codigo, cantidad, precio FROM productos;";
+        $recoger = "SELECT foto, modelo, codigo, cantidad, precio, precioOferta  FROM productos;";
         $nvConexion = nuevaConexion();
         $query_obtener = mysqli_query($nvConexion, $recoger);
         if (!$query_obtener) {
@@ -33,7 +33,7 @@
 
     if($accionCatalogo == "buscarPrenda") {
         $codigo = $_POST["codigo"];
-        $recoger = "SELECT foto, modelo, codigo, cantidad, precio FROM productos WHERE modelo = '".$codigo."';";
+        $recoger = "SELECT foto, modelo, codigo, cantidad, precio, precioOferta FROM productos WHERE modelo = '".$codigo."';";
         $nvConexion = nuevaConexion();
         $query_obtener = mysqli_query($nvConexion, $recoger);
         if (!$query_obtener) {

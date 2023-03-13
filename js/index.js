@@ -27,6 +27,19 @@ function mostrarRopa () {
 
                     console.log(dataSet);
                     $('#myTable').DataTable( {
+                        language: {
+                            searchPlaceholder: 'Buscar...',
+                            search: '',
+                            lengthMenu: 'Mostrar _MENU_ registros por página',
+                            zeroRecords: 'No se encontró nada similar :(',
+                            info: 'Mostrando página _PAGE_ de _PAGES_',
+                            infoEmpty: 'No se encontraron datos',
+                            infoFiltered: '(Ordenar de _MAX_ total de productos)',
+                            "paginate":{
+                                "previous": "anterior",
+                                "next": "siguiente",
+                            },
+                        },
                         data: dataSet,
                         columnDefs: [{
                             "targets": 0,
