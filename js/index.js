@@ -1,8 +1,20 @@
+var contador = 0;
+
 $(document).ready(function(){
     mostrarRopa();
 });
 
 function mostrarRopa () {
+    //color de filas
+    const celda = document.getElementById("bodyTable");
+    contador++;
+    if((contador%2) == 0){  
+        a.style.backgroundColor = "#FFFFFF";
+    }
+    else{
+        //a[this].style.backgroundColor = "#FFFFFF";
+    }
+
     console.log("mostrando ropa");
     var miData = new FormData();
     miData.append("func","mostrarRopa");

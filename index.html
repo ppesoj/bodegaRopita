@@ -11,23 +11,32 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css"/>    
         <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.13.3/css/jquery.dataTables.min.css">
         <link href="https://cdn.datatables.net/1.13.3/css/jquery.dataTables.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
         <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <link rel="stylesheet" href="plugins/font-awesome/fontawesome-free-6.2.1-web/css/all.css"
+
    </head>
    <body>
     <div class="navbar p-0 m-0 mb-3" style="background: #D932AC;">
-        <div class="row">
-            <div class="col-4">
-              <img src="img/logoSinFondo.png" class="img-fluid w-50 p-1">
+        <div class="row container-fluid" style="padding: 0 !important">
+            <div class="nav-item col-6" style="padding-left: 6rem;">
+              <img src="img/logoSinFondo.png" class="logo img-fluid w-25 p-1">
             </div>
-            <div class="col-8">
+            <div class="navbar justify-content-end col-4 m-auto">
+                <div class="nav-item"> 
+                    <a class="nav-link text-white" href="vistas/QRlector.html"><i class="fa fa-list-alt" aria-hidden="true"></i> Registros</a>
+                </div>
+                <div class="nav-item"> 
+                    <a class="nav-link text-white" href="vistas/QRlector.html"><i class="fa-solid fa-qrcode"></i> Buscar QR</a>
+                </div>
+                <div class="nav-item"> 
+                    <a class="nav-link text-white" href="vistas/QRlector.html"><i class="fa-solid fa-print"></i> Imprimir QR</a>
+                </div>
             </div>
         </div>
     </div>
-    <div>
-
-    </div>
-    <table id="myTable" class="display">
-        <thead>
+    <table id="myTable" class="display hover ">
+        <thead class="text-white" style="background: #D932AC;">
             <tr>
                 <th>Foto</th>
                 <th>Modelo</th>
@@ -37,7 +46,7 @@
                 <th>Precio de oferta</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody id="bodyTable" style="background: #EEF2E9;">
             
         </tbody>
     </table>
@@ -49,7 +58,6 @@
     <script type="text/javascript" src="js/index.js"></script>   
 
     <script type="text/javascript">
-        
     </script>
     </body>
 </html>
