@@ -56,7 +56,7 @@ function mostrarRopa () {
                         columnDefs: [{
                             "targets": 0,
                             "render": function (data, type, row) {
-                                var checkbox = '<img src="controlador/docs/ropa/'+data+'" style="width: 10em;">';
+                                var checkbox = '<img src="docs/ropa/productos/'+data+'" style="width: 10em;">';
                                 return checkbox;
                             }
                         }],

@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="img/favicon.png" type="image/png" />
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <!--Estilos-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="../css/index.css">
   <link rel="stylesheet" type="text/css" href="../css/QRlector.css">
   <!-- DataTables CSS library -->
@@ -25,7 +25,7 @@
         </div>
         <div class="navbar justify-content-end col-4 m-auto">
             <div class="nav-item"> 
-                <a class="nav-link text-white" href="QRlector.html"><i class="fa fa-list-alt" aria-hidden="true"></i> Registros</a>
+                <a class="nav-link text-white" href="../index.html"><i class="fa fa-list-alt" aria-hidden="true"></i> Registros</a>
             </div>
             <div class="nav-item"> 
                 <a class="nav-link text-white" href="QRlector.html"><i class="fa-solid fa-qrcode"></i> Buscar QR</a>
@@ -37,23 +37,26 @@
     </div>
   </div>
   <!--contenido-->
-  <div id="contenido" class="d-lg-flex flex-row col-12 h-auto">
+  <div id="contenido" class="row p-0 m-0">
     <div class="col-lg-6 col-sm-12 col-md-12 p-0">
       <div id="loadingMessage">🎥 Por favor permite que se habilite tu camara</div>
       <canvas id="canvas" hidden></canvas>
     </div>
-    <div id="output" hidden class="d-sm-flex d-md-flex d-lg-flex flex-row col-lg-6 col-sm-12 col-md-12 p-0">
-        <img id="imagenResultado" src="">
+    <div class="col-lg-6 col-sm-12 col-md-12 p-0 m-0">
+      <div id="output" hidden>
         <!-- info del articulo-->
         <div class="px-4">
           <div id="outputMessage" class="px-4">No se ha detectado ningún código QR</div>
-        <div hidden><b>Modelo: </b> <span id="outputData"></span></div>
-        <div hidden><b>Modelo: </b> <span id="outputData"></span></div>
-        <div hidden><b>Precios</b> <span id="precioRango1"></span></div>
-        <div hidden><b>Precio de oferta: </b> <span id="precioOferta"></span></div>
-        <div hidden><b>1-2 piezas: </b> <span id="precioRango1"></span></div>
+          <div hidden><b>Modelo: </b> <span id="outputData"></span></div>
+          <div hidden><b>Modelo: </b> <span id="outputData"></span></div>
+          <div hidden><b>Precios</b> <span id="precioRango1"></span></div>
+          <div hidden><b>Precio de oferta: </b> <span id="precioOferta"></span></div>
+          <div hidden><b>1-2 piezas: </b> <span id="precioRango1"></span></div>
         </div>
+        <img id="imagenResultado" src="../img/smartphone-su-concepto-mano-escanear-codigo-qr_147754-197.webp">
+      </div>
     </div>
+    
   </div>
   
   <script type="text/javascript" src="../js/jquery-3.6.3.min.js"></script>

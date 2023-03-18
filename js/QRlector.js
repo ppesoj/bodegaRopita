@@ -76,7 +76,7 @@
                     precioOferta.innerText = respuesta.data[0].precioOferta;
                     precioRango1.parentElement.hidden = false;
                     precioRango1.innerText = respuesta.data[0].precio;
-                    imagenResultado.setAttribute("src", "../controlador/docs/ropa/"+respuesta.data[0].foto);
+                    imagenResultado.setAttribute("src", "../docs/ropa/productos/"+respuesta.data[0].foto);
                 }else {
                     console.log("Hubo un error en el servidor");
                 }
