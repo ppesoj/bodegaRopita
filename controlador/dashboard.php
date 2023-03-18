@@ -49,8 +49,6 @@
             exit;
         }
         if ( isset($query) ) {
-
-            var_dump($conexion);
             $idRegreso = $conexion->insert_id;
             $resultados["idRegreso"] = $idRegreso;
             

@@ -107,7 +107,6 @@
     <script src="../vendor/qrious-master/dist/qrious.js"></script>
 	<script src="../vendor/jsQR-master/docs/jsQR.js"></script>
   	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>       
-	<script src="../vendor/simple-mask-money-master/lib/simple-mask-money.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
 
     <script>
@@ -148,6 +147,7 @@
 			){
 				
 				$.confirm({
+					boxWidth: '30%',
 					title: 'Datos Incompletos!',
 					content: 'Vuelve a revizar los datos de tu formulario, asegurate que los campos de modelo y codigo esten rellenados.',
 					type: 'red',
@@ -162,6 +162,7 @@
 
 			}else if($('#inputCantidad').val() < 1 ) {
 				$.confirm({
+					boxWidth: '30%',
 					title: 'Datos Incompletos!',
 					content: 'Vuelve a revizar los datos de tu formulario, asegurate que la cantidad sea mayor a 1.',
 					type: 'red',
@@ -176,6 +177,7 @@
 
 			}else if ( parseFloat($('#inputPrecio').val().split(",").join("")) < 1 ) {
 				$.confirm({
+					boxWidth: '30%',
 					title: 'Datos Incompletos!',
 					content: 'Vuelve a revizar los datos de tu formulario, asegurate que el precio sea mayor a 0.00$.',
 					type: 'red',
@@ -189,6 +191,7 @@
 				return 0;
 			}else if(parseFloat($('#inputPrecio-oferta').val().split(",").join("")) < 1) {
 				$.confirm({
+					boxWidth: '30%',
 					title: 'Datos Incompletos!',
 					content: 'Vuelve a revizar los datos de tu formulario, asegurate que el precio en oferta sea mayor a 0.00$.',
 					type: 'red',
@@ -207,6 +210,7 @@
 			miData.append("inputPrecio-ofertaConvert",parseFloat($('#inputPrecio-oferta').val().split(",").join("")));
 			
 			$(".spinner-border").show();
+			$("#enviarForm").prop("disabled","true");
 			$.ajax({
 				url: "../controlador/dashboard.php",
 				type: "POST",
@@ -217,11 +221,52 @@
 				cache: false,
 				success: function (respuesta) { 
 					$(".spinner-border").hide();
-					
+					if(respuesta.status) {
+						$.confirm({
+							boxWidth: '30%',
+							title: 'Bien Hecho!',
+							content: 'Se ha guardado el producto con exito',
+							type: 'green',
+							typeAnimated: true,
+							buttons: {
+								close: function () {
+								}
+							}
+						});
+						document.getElementById("formularioRegistro").reset();
+						$("#enviarForm").removeAttr("disabled");
+					}else {
+						$.confirm({
+							boxWidth: '30%',
+							title: 'Ocurrio un error inesperado!',
+							content: 'Contacte con el administrador',
+							type: 'red',
+							typeAnimated: true,
+							buttons: {
+								
+								close: function () {
+								}
+							}
+						});
+						$("#enviarForm").removeAttr("disabled");
+					}
 				},
 				error: function (e) {
 					console.log("ERROR : ", e);
 					$(".spinner-border").hide();
+					$.confirm({
+						boxWidth: '30%',
+							title: 'Ocurrio un error inesperado!',
+							content: 'Contacte con el administrador',
+							type: 'red',
+							typeAnimated: true,
+							buttons: {
+								
+								close: function () {
+								}
+							}
+					});
+					$("#enviarForm").removeAttr("disabled");
 				}
 			})
 		});
