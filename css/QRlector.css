@@ -16,11 +16,11 @@ body {
   }
 
   #contenido {
-    padding-top: 2rem;
-    padding-left: 6rem;
-    padding-right: 6rem;
+    padding-top: 2rem !important;
+    padding-left: 6rem !important;
+    padding-right: 6rem !important;
   }
-  
+
   #loadingMessage {
     text-align: center;
     padding: 40px;

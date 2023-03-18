@@ -37,26 +37,23 @@
     </div>
   </div>
   <!--contenido-->
-  <div id="contenido" class="row p-0 m-0">
+  <div id="contenido" class="d-lg-flex flex-row col-12 h-auto">
     <div class="col-lg-6 col-sm-12 col-md-12 p-0">
       <div id="loadingMessage">🎥 Por favor permite que se habilite tu camara</div>
       <canvas id="canvas" hidden></canvas>
     </div>
-    <div class="col-lg-6 col-sm-12 col-md-12 p-0 m-0">
-      <div id="output" hidden>
-        <!-- info del articulo-->
-        <div class="px-4">
-          <div id="outputMessage" class="px-4">No se ha detectado ningún código QR</div>
-          <div hidden><b>Modelo: </b> <span id="outputData"></span></div>
-          <div hidden><b>Modelo: </b> <span id="outputData"></span></div>
-          <div hidden><b>Precios</b> <span id="precioRango1"></span></div>
-          <div hidden><b>Precio de oferta: </b> <span id="precioOferta"></span></div>
-          <div hidden><b>1-2 piezas: </b> <span id="precioRango1"></span></div>
-        </div>
-        <img id="imagenResultado" src="../img/smartphone-su-concepto-mano-escanear-codigo-qr_147754-197.webp">
-      </div>
+    <div id="output" hidden class="d-sm-flex d-md-flex d-lg-flex flex-row col-lg-6 col-sm-12 col-md-12 p-0">
+      <img id="imagenResultado" src="../img/scan.png" class="h-75 m-auto">
+      <!-- info del articulo-->
+      <div class="px-4">
+        <div id="outputMessage" class="px-4">No se ha detectado ningún código QR</div>
+      <div hidden><b>Modelo: </b> <span id="outputData"></span></div>
+      <div hidden><b>Modelo: </b> <span id="outputData"></span></div>
+      <div hidden><b>Precios</b> <span id="precioRango1"></span></div>
+      <div hidden><b>Precio de oferta: </b> <span id="precioOferta"></span></div>
+      <div hidden><b>1-2 piezas: </b> <span id="precioRango1"></span></div>
+      </div>  
     </div>
-    
   </div>
   
   <script type="text/javascript" src="../js/jquery-3.6.3.min.js"></script>
