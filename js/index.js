@@ -7,6 +7,7 @@ $(document).ready(function(){
 $(document).on("click", ".btnQr", function(e) {
     e.preventDefault();
     urlImg = $(this).data("nombreimagen");
+    rutaImg = "./docs/codigosQR/ropa_productos/"+urlImg;
     $.confirm({
         boxWidth: '30%',
         title: 'codigo QR',
@@ -33,6 +34,12 @@ $(document).on("click", ".btnQr", function(e) {
 })
 
 function mandarImprimir() {
+    console.log(rutaImg)
+    printJS({
+        printable: [rutaImg, rutaImg, rutaImg],
+        type: 'image',
+        imageStyle: 'width:100%;margin-bottom:10px;'
+    })
     console.log("imprimiendo la imagen ./docs/codigosQR/ropa_productos/"+urlImg)
 }
 
