@@ -82,7 +82,7 @@
 				<!-- foto -->
 				<label>Foto:</label>
 				<div class="w-100" style="display: flex;">
-					<input class="col-7 pl-0 my-auto" type="file" placeholder="Subir Imagen">
+					<input class="col-8 pl-0 my-auto" type="file" placeholder="Subir Imagen">
 					<img class="img-upload col-4 p-0" src="../img/image.png" >
 				</div>
 				<!-- precios -->
@@ -133,14 +133,16 @@
 						<input type="text" class="form-control" id="inputPrecioRango5" name="inputPrecioRango5" inputmode="numeric" aria-describedby="PrecioRango2Form" required>
 					</div>
 				</div>
-				<button id="enviarForm" type="button" class="rosaFuerte mx-auto w-50 border-none">Guardar</button>
+				<button id="enviarForm" type="button" class="rosaFuerte mx-auto w-50">Guardar</button>
 				<div class="spinner-border text-primary" role="status">
 				<span class="sr-only">Cargando...</span>
 				</div>
 			</form>
 		</div>
-		<div>
-			<!-- logo qr -->
+		<!-- logo qr -->
+		<div id="sectionQR" class="mx-auto w-100 p-5">
+			<img class="img-QR mx-auto" alt="Código QR" id="codigo" src="../img/qr-code.png">
+			<button id="btnDescargar" class="rosaFuerte px-2 py-1 mx-auto"><i class="fa-solid fa-download"></i> Descargar QR</button>
 		</div>
 	</div>
 

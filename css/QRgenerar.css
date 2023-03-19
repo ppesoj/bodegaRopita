@@ -22,8 +22,21 @@ input{
     width: 100%;
 }
 
+#sectionQR{
+    display: grid;
+    height: 100%;
+}
+#btnDescargar{
+    border: none;
+    margin-top: 2rem;
+    color:white;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
 .img-QR {
-    width: 100%;
+    width: 50%;
     height: auto;
 }
 

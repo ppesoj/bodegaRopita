@@ -6,8 +6,8 @@ html {
 }
 
 #menu{
-    padding-top: .5rem;
-    padding-bottom: .5rem;
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
 }
 
 .rosaFuerte{
