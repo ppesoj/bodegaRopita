@@ -36,6 +36,7 @@
         $inputPiezasPaquete = $_POST["inputPiezasPaquete"];
         $inputPrecioOferta_convert = $_POST["inputPrecioOferta-convert"];
 
+
         //consulta insertar la noticia
         $query_insertProduct = $conexion->query('INSERT INTO productos (id, modelo, codigo, descripcion, cantidad, foto, precio, precioOferta, piezasPaquete, created_at, updated_at, dataQR) VALUES (NULL, "'.$inputModelo.'", NULL, "'.$inputDescripcion.'", NULL, NULL, 0, '.$inputPrecioOferta_convert.', '.$inputPiezasPaquete.', NULL, NULL, NULL);');
         if (!$query_insertProduct) {
@@ -70,6 +71,47 @@
                     }
                     if ( isset($insertarImgDb) ) {
                         $resultados["images"]["qr"]["status"] = true;
+
+                            //guardamos ahora la imagen de la ropa
+                            $ext_formatos = array("png","jpg","jpeg","webp");
+                            //guardado de  portada
+                            $imgRopaPrenda = json_decode($_POST["portada"]);
+                            $extensionPorta = explode('/', mime_content_type($imgRopaPrenda->result))[1];
+                            if(!in_array(strtolower($extensionPorta),$ext_formatos)) {
+                                $resultados["status"] = false;
+                                $resultados["images"] = "El tipo de imagen de portada no es correcto";
+                                return print (json_encode($resultados));
+                            }else {
+                                $imgRopaPrenda = str_replace('data:image/'.$extensionPorta.';base64,', '', $imgRopaPrenda->result);
+                                $imgRopaPrenda = str_replace(' ', '+', $imgRopaPrenda);
+                                $dataPrenda = base64_decode($imgRopaPrenda);
+                                $fileNamePrenda = 'productoPrenda-'.$inputModelo.'-'.getRandomString(7).'.'.$extensionPorta;
+                                $dir_to_save_prenda = "../docs/ropa/productos/";
+                                $addPrenda = $dir_to_save_prenda.$fileNamePrenda;
+                                file_put_contents($addPrenda,$dataPrenda);
+                                //revizamos si se guardo
+                                if(!file_exists($addPrenda)) {
+                                    $resultados["images"]["prendaImg"]["file"] = "No";
+                                }else {// si se agrego con exito la guardamos en la base de datos con su noticia asociada
+                                    $resultados["images"]["prendaImg"]["file"] = "Si";
+                    
+                                    $insertarPrenda = "UPDATE productos SET foto = '".$fileNamePrenda."' WHERE id = ".$idRegreso.";";
+                    
+                                    $nvConexionPort = nuevaConexion();
+                                    $queryNoticiaPrenda = mysqli_query($nvConexionPort, $insertarPrenda);
+                                    if (!$queryNoticiaPrenda) {
+                                        $resultados["images"]["portada"]["fallo"] = mysqli_error($nvConexionPort);
+                                    }
+                                    if ( isset($queryNoticiaPrenda) ) {
+                                        $resultados["images"]["portada"]["status"] = true;
+                                    } else {
+                                        $resultados["images"]["portada"]["status"] = false;
+                                    }
+                
+                                }
+                            }
+                        
+
                     } else {
                         $resultados["images"]["qr"]["status"] = false;
                     }

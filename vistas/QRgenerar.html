@@ -45,7 +45,7 @@
 	</div>
     
 	<!-- content -->
-	<div id="contenido" class="d-flex flex-row pb-5">
+	<div id="contenido" class="row pb-5">
 		<div id="baseformRegistro" class="px-5 py-4 col-sm-12 col-md-6 col-lg-6">
 			<form id="formularioRegistro">
 				<h3 class="font-weight-bold text-center pb-4" style="color: #D932AC">Nuevo Producto</h3>
@@ -85,8 +85,10 @@
 				<!-- foto -->
 				<label>Foto:</label>
 				<div class="w-100" style="display: flex;">
-					<input class="col-8 pl-0 my-auto" type="file" placeholder="Subir Imagen">
-					<img class="img-upload col-4 p-0" src="../img/image.png" >
+					<input id="imgRopa" class="col-8 pl-0 my-auto" type="file" placeholder="Subir Imagen" accept="image/png, image/gif, image/jpeg">
+					<div class="portada" id="portada">
+						<img class="img-upload col-4 p-0" src="../img/image.png" >
+					</div>
 				</div>
 				<!-- precios -->
 				<label class="font-weight-bold">Precios</label>
@@ -143,7 +145,7 @@
 			</form>
 		</div>
 		<!-- logo qr -->
-		<div id="sectionQR" class="mx-auto w-100 p-5">
+		<div id="sectionQR" class="px-5 py-4 col-sm-12 col-md-6 col-lg-6">
 			<img class="img-QR mx-auto" alt="Código QR" id="codigo" src="../img/qr-code.png">
 			<button id="btnDescargar" class="rosaFuerte px-2 py-1 mx-auto"><i class="fa-solid fa-download"></i> Descargar QR</button>
 			<!--<button id="btnImprimir" type="button" 
@@ -260,7 +262,15 @@
 				return 0;
 			}
 
+			if($('#imgRopa').val().length == 0) {
+				alertaError(2, 'Subir la imagen de la prenda es obligatorio, asegurate que la hayas agregado.');
+				return 0;
+			}
+
 			var miData = new FormData( $('#formularioRegistro')[0] );
+
+			miData.append("portada",JSON.stringify(objPortada));
+
 			miData.append("func","agregarProducto");
 			if(isNaN(parseFloat($('#inputPrecioOferta').val().split(",").join("")))){ $('#inputPrecioOferta').val('0') }
 			miData.append("inputPrecioOferta-convert",  parseFloat($('#inputPrecioOferta').val().split(",").join("")) );
@@ -283,7 +293,7 @@
 
 			var imgQR = document.getElementById('codigo');
 			miData.append("imgQRN", imgQR.src);
-			miData.append("imgQR_name", "bodegaRopa_"+$("#inputModelo").val());
+			miData.append("imgQR_name", "bodegaRopa_"+$('#inputModelo').val().split(" ").join(""));
 			// https://stackoverflow.com/questions/11511511/how-to-save-a-png-image-server-side-from-a-base64-data-uri
 			
 			$.ajax({
@@ -313,6 +323,29 @@
 			})
 			
 		});
+
+		$('#imgRopa').on('change', function() {
+			portadaPreview(this, 'div.portada');
+		});
+
+		let objPortada;
+		function portadaPreview (input, placeToInsertImagePreview) {
+			if (input.files) {
+					$("#portada").empty();
+					var reader = new FileReader();
+					var lastModified = input.files[0].lastModified;
+					reader.onload = function(event) {
+						$($.parseHTML(`
+								<img src="`+event.target.result+`" class="w-100">
+						`)).appendTo(placeToInsertImagePreview);
+						
+						var memo = input.files[0];//se agregan al obj de portada
+						memo["result"] = event.target.result;
+						objPortada = memo;
+					}
+					reader.readAsDataURL(input.files[0]);       
+			}
+		};
 
 		function alertaError (idTitulo, mensaje) {
 			var titulo = '';
@@ -356,7 +389,7 @@
 			$boton = document.querySelector("#btnDescargar");
 			new QRious({
 				element: $imagen,
-				value: $("#inputModelo").val(), // La URL o el texto a transformar en QR
+				value: $('#inputModelo').val().split(" ").join(""), // La URL o el texto a transformar en QR
 				size: 500,
 				backgroundAlpha: 100, // 0 para fondo transparente
 				foreground: "#000000", // Color del QR
@@ -365,7 +398,7 @@
 			$boton.onclick = () => {
 				const enlace = document.createElement("a");
 				enlace.href = $imagen.src;
-				enlace.download = "bodegaRopa_"+$("#inputModelo").val();
+				enlace.download = "bodegaRopa_"+$('#inputModelo').val().split(" ").join("");
 				enlace.click();
 			}
 		}
