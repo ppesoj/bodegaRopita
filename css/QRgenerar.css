@@ -1,3 +1,22 @@
+#baseformRegistro{
+ background-color: #F2D8F2;
+}
+
+input{
+    border: none;
+}
+
+#contenido{
+    padding-top: 2rem !important;
+    padding-left: 6rem !important;
+    padding-right: 6rem !important;
+}
+
+.form-control{
+    border: none !important;
+    border-radius: 0 !important;
+}
+
 .img-upload {
     position: relative;
     width: 100%;
@@ -10,4 +29,12 @@
 
 .spinner-border {
     display: none;
+}
+#enviarForm{
+    margin-left: 25% !important;
+    border: none;
+    margin-top: 2rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    color: white;
 }

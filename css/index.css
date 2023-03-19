@@ -4,6 +4,16 @@ html {
     padding: 0!important;
     margin: 0!important;
 }
+
+#menu{
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+
+.rosaFuerte{
+    background: #D932AC
+}
+
 .navbar{
     background: #D932AC;
     width: auto;

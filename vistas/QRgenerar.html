@@ -22,10 +22,10 @@
 </head>
 <body>
 	<!--Navbar-->
-	<div class="navbar p-0 m-0 mb-3">
+	<div id="menu" class="navbar p-0 m-0 mb-3">
 		<div class="row container-fluid" style="padding: 0 !important">
 			<div class="nav-item col-6" style="padding-left: 6rem;">
-			  <img src="../img/logoSinFondo.png" class="logo img-fluid w-25 p-1">
+			  <img src="../img/logo.png" class="logo img-fluid w-25 p-1">
 			</div>
 			<div class="navbar justify-content-end col-4 m-auto">
 				<div class="nav-item"> 
@@ -35,13 +35,117 @@
 					<a class="nav-link text-white" href="QRlector.html"><i class="fa-solid fa-qrcode"></i> Buscar QR</a>
 				</div>
 				<div class="nav-item"> 
-					<a class="nav-link text-white" href="QRlector.html"><i class="fa-solid fa-print"></i> Imprimir QR</a>
+					<a class="nav-link text-white" href="QRgenerar.html"><i class="fa-solid fa-print"></i> Imprimir QR</a>
 				</div>
 			</div>
 		</div>
 	</div>
     
-	<div class="row p-0 " style=" margin: 2rem 0rem; margin-bottom: 6rem;  justify-content: center;">
+	<!-- content -->
+	<div id="contenido" class="d-flex flex-row pb-5">
+		<div id="baseformRegistro" class="px-5 py-4 col-sm-12 col-md-6 col-lg-6">
+			<form id="formularioRegistro">
+				<h3 class="font-weight-bold text-center pb-4" style="color: #D932AC">Nuevo Producto</h3>
+				<div class="d-flex flex-row w-100">
+					<div class="form-group w-50 pr-3">
+						<label for="inputModelo">Código del modelo:</label>
+						<input type="text" class="form-control" id="inputModelo" name="inputModelo" aria-describedby="modeloForm" required>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="" name="inputNoCodigo" id="inputNoCodigo">
+							<label class="form-check-label" for="inputNoCodigo">
+								El producto no tiene código
+						</label>
+						</div>
+					</div>
+
+					<div class="form-group w-50 pl-3">
+						<label for="inputMarca">Marca:</label>
+						<input hidden type="text" class="form-control" id="inputMarca" name="inputMarca" aria-describedby="marcaForm" required>
+					</div>
+				</div>
+
+				<div class="d-flex flex-row w-100">
+					<div class="form-group w-50 pr-3">
+						<label for="inputPiezasPaquete">Piezas por paquete:</label>
+						<input type="text" class="form-control" id="inputPiezasPaquete" name="inputPiezasPaquete" aria-describedby="piezasPaqueteForm" required>
+					</div>
+					<div class="form-group w-50 pl-3">
+						<label for="inputStock">Piezas en existencia:</label>
+						<input type="text" class="form-control" id="inputStock" name="inputStock" aria-describedby="stockForm" required>
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label for="inputDescripcion">Comentarios:</label>
+					<textarea class="form-control" id="inputDescripcion" name="inputDescripcion"></textarea>
+				</div>
+				<!-- foto -->
+				<label>Foto:</label>
+				<div class="w-100" style="display: flex;">
+					<input class="col-7 pl-0 my-auto" type="file" placeholder="Subir Imagen">
+					<img class="img-upload col-4 p-0" src="../img/image.png" >
+				</div>
+				<!-- precios -->
+				<label class="font-weight-bold">Precios</label>
+				<div class="d-flex flex-row w-100">
+					<div class="form-group w-50 pr-3">
+						<label for="inputPrecio">1-2 piezas:</label>
+						<input type="text" class="form-control" id="inputPrecio" name="inputPrecio" inputmode="numeric" aria-describedby="PrecioForm" required>
+					</div>
+					<div class="form-group w-50 pl-3">
+						<label for="inputPrecioOferta">Precio (Moneda Mexicana):</label>
+						<input type="text" class="form-control" id="inputPrecioOferta" name="inputPrecioOferta" inputmode="numeric" aria-describedby="PrecioForm" required>
+					</div>
+				</div>
+
+				<div class="d-flex flex-row w-100">
+					<div class="form-group w-50 pr-3">
+						<label for="inputPrecioRango2">3-5 piezas:</label>
+						<input type="text" class="form-control" id="inputPrecioRango2" name="inputPrecioRango2" inputmode="numeric" aria-describedby="PrecioRango2Form" required>
+					</div>
+					<div class="form-group w-50 pl-3">
+						<label for="inputFechaInicioOferta">Fecha de inicio de la oferta:</label>
+						<input type="text" class="form-control" id="inputFechaInicioOferta" name="inputFechaInicioOferta" inputmode="numeric" aria-describedby="PrecioForm" required>
+					</div>
+				</div>
+
+				<div class="d-flex flex-row w-100">
+					<div class="form-group w-50 pr-3">
+						<label for="inputPrecioRango3">1/2 paquete:</label>
+						<input type="text" class="form-control" id="inputPrecioRango3" name="inputPrecioRango3" inputmode="numeric" aria-describedby="PrecioRango2Form" required>
+					</div>
+					<div class="form-group w-50 pl-3">
+						<label for="inputFechaFinOferta">Fecha de fin de la oferta:</label>
+						<input type="text" class="form-control" id="inputFechaFinOferta" name="inputFechaFinOferta" inputmode="numeric" aria-describedby="PrecioForm" required>
+					</div>
+				</div>
+
+				<div class="d-flex flex-row w-100">
+					<div class="form-group w-50 pr-3">
+						<label for="inputPrecioRango4">1 paquete:</label>
+						<input type="text" class="form-control" id="inputPrecioRango4" name="inputPrecioRango4" inputmode="numeric" aria-describedby="PrecioRango2Form" required>
+					</div>
+				</div>
+
+				<div class="d-flex flex-row w-100">
+					<div class="form-group w-50 pr-3">
+						<label for="inputPrecioRango5">2 paquetes:</label>
+						<input type="text" class="form-control" id="inputPrecioRango5" name="inputPrecioRango5" inputmode="numeric" aria-describedby="PrecioRango2Form" required>
+					</div>
+				</div>
+				<button id="enviarForm" type="button" class="rosaFuerte mx-auto w-50 border-none">Guardar</button>
+				<div class="spinner-border text-primary" role="status">
+				<span class="sr-only">Cargando...</span>
+				</div>
+			</form>
+		</div>
+		<div>
+			<!-- logo qr -->
+		</div>
+	</div>
+
+	<!-- inicia code anterior -->
+	<!--<div class="row p-0 " style=" margin: 2rem 0rem; margin-bottom: 6rem;  justify-content: center;">
 		<div class="col-sm-12 col-md-3 col-lg-3">
 			<img class="img-upload" src="../img/pngtree-image-upload-icon-photo-upload-icon-png-image_2047546.jpg" >
 			<input type="file" placeholder="Subir Imagen">
@@ -51,7 +155,6 @@
 				<div class="form-group">
 				  <label for="inputModelo">Modelo:</label>
 				  <input type="text" class="form-control" id="inputModelo" name="inputModelo" aria-describedby="modeloForm" placeholder="Ingresa el modelo de prenda" required>
-				  <!-- <small id="ModeloForm" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
 				</div>
 
 				<div class="form-group">
@@ -64,25 +167,21 @@
 							No cuenta con un codigo? (Marque esta casilla y se le asignara uno automaticamente)
 						</label>
 					  </div>
-					<!-- <small id="CodigoForm" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
 				</div>
 
 				<div class="form-group">
 					<label for="inputCantidad">Cantidad:</label>
 					<input type="number" class="form-control" id="inputCantidad" name="inputCantidad" min="1" aria-describedby="CantidadForm" placeholder="Ingresa la Cantidad en existencia" required>
-					<!-- <small id="CantidadForm" class="form-number number-muted">We'll never share your email with anyone else.</small> -->
 				</div>
 
 				<div class="form-group">
 					<label for="inputPrecio">Precio (Moneda Mexicana):</label>
 					<input type="text" class="form-control" id="inputPrecio" name="inputPrecio" inputmode="numeric" aria-describedby="PrecioForm" placeholder="Ingresa el Precio de la prenda" required>
-					<!-- <small id="PrecioForm" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
 				</div>
 
 				<div class="form-group">
 					<label for="inputPrecio">Precio de Oferta (Moneda Mexicana):</label>
 					<input type="text" class="form-control" id="inputPrecio-oferta" name="inputPrecio" inputmode="numeric" aria-describedby="PrecioForm" placeholder="Ingresa el Precio de la prenda" required>
-					<!-- <small id="PrecioForm" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
 				</div>
 
 				<div class="form-group">
@@ -100,8 +199,8 @@
 			<img class="img-QR" alt="Código QR" id="codigo" src="../img/QR-Code-Generator.webp">
 			<button id="btnDescargar">Descargar</button>
 		</div>
-	</div>
-
+	</div> 
+	<!-- termina code anterior -->
 
     <script src="../js/jquery-3.6.3.min.js"></script>
     <script src="../vendor/qrious-master/dist/qrious.js"></script>
