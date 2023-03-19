@@ -146,19 +146,16 @@
 		<div id="sectionQR" class="mx-auto w-100 p-5">
 			<img class="img-QR mx-auto" alt="Código QR" id="codigo" src="../img/qr-code.png">
 			<button id="btnDescargar" class="rosaFuerte px-2 py-1 mx-auto"><i class="fa-solid fa-download"></i> Descargar QR</button>
-			<button id="btnImprimir" type="button" 
-				onclick="printJS({
-				printable: ['qr.jpg', 'qr.jpg', 'qr.jpg'],
-				type: 'image',
-				imageStyle: 'width:100%;margin-bottom:10px;'
-			   })"
-			   class="rosaFuerte px-2 py-1 mx-auto"><i class="fa-solid fa-print"></i> Imprimir QR</button>
+			<!--<button id="btnImprimir" type="button" 
+				onclick="printJS()"
+			   class="rosaFuerte px-2 py-1 mx-auto"><i class="fa-solid fa-print"></i> Imprimir QR</button>-->
 		</div>
 	</div>
 
     <script src="../js/jquery-3.6.3.min.js"></script>
     <script src="../vendor/qrious-master/dist/qrious.js"></script>
 	<script src="../vendor/jsQR-master/docs/jsQR.js"></script>
+	<script src="../js/printQR.js"></script>
   	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>       
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
 
