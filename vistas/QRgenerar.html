@@ -12,6 +12,9 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css"/>    
 	<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.13.3/css/jquery.dataTables.min.css">
 	<link href="https://cdn.datatables.net/1.13.3/css/jquery.dataTables.css">
+	<!-- printJS library -->
+	<script src="../node_modules/print-js/dist/print.js"></script>
+
 	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 	<link rel="stylesheet" href="../plugins/font-awesome/fontawesome-free-6.2.1-web/css/all.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
@@ -143,7 +146,13 @@
 		<div id="sectionQR" class="mx-auto w-100 p-5">
 			<img class="img-QR mx-auto" alt="Código QR" id="codigo" src="../img/qr-code.png">
 			<button id="btnDescargar" class="rosaFuerte px-2 py-1 mx-auto"><i class="fa-solid fa-download"></i> Descargar QR</button>
-			<button id="btnImprimir" class="rosaFuerte px-2 py-1 mx-auto"><i class="fa-solid fa-print"></i> Imprimir QR</button>
+			<button id="btnImprimir" type="button" 
+				onclick="printJS({
+				printable: ['qr.jpg', 'qr.jpg', 'qr.jpg'],
+				type: 'image',
+				imageStyle: 'width:100%;margin-bottom:10px;'
+			   })"
+			   class="rosaFuerte px-2 py-1 mx-auto"><i class="fa-solid fa-print"></i> Imprimir QR</button>
 		</div>
 	</div>
 
