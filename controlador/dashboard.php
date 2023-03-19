@@ -46,7 +46,35 @@
         if ( isset($query_insertProduct) ) {
             $idRegreso = $conexion->insert_id;
             $resultados["idRegreso"] = $idRegreso;
-            
+
+            //guardando en la db la imagen
+            $data = $_POST["imgQRN"];
+            list($type, $data) = explode(';', $data);
+            list(, $data)      = explode(',', $data);
+            $data = base64_decode($data);
+                        
+            $nombreImg = 'bodegaRopa'.$_POST["imgQR_name"].'_'.getRandomString(7).'.jpg';
+            $direccionGuardar = '../docs/codigosQR/ropa_productos/'.$nombreImg;
+            file_put_contents ( $direccionGuardar, $data);
+
+            //verificamos si el archivo existe en la carpeta, osea si se guardo ps
+            if(!file_exists($direccionGuardar)) {
+                $resultados["images"]["qr"]["file"] = "No guardado / error";
+            }else {
+                $resultados["images"]["qr"]["file"] = "si guardado / exitoso";
+                $insertarImgDb = $conexion->query("UPDATE productos SET dataQR = '".$nombreImg."' WHERE id = ".$idRegreso.";");
+    
+                    
+                    if (!$insertarImgDb) {
+                        $resultados["images"]["qr"]["fallo"] = mysqli_error($nvConexionPort);
+                    }
+                    if ( isset($insertarImgDb) ) {
+                        $resultados["images"]["qr"]["status"] = true;
+                    } else {
+                        $resultados["images"]["qr"]["status"] = false;
+                    }
+            }
+
             $resultados["status"] = true;
         } else {
             $resultados["status"] = false;
@@ -54,6 +82,19 @@
         $conexion->close();
         
         return print (json_encode($resultados));
+    }
+
+    function getRandomString($n)
+    {
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $randomString = '';
+
+        for ($i = 0; $i < $n; $i++) {
+            $index = rand(0, strlen($characters) - 1);
+            $randomString .= $characters[$index];
+        }
+
+        return $randomString;
     }
 
 ?>

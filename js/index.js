@@ -4,6 +4,38 @@ $(document).ready(function(){
     mostrarRopa();
 });
 
+$(document).on("click", ".btnQr", function(e) {
+    e.preventDefault();
+    urlImg = $(this).data("nombreimagen");
+    $.confirm({
+        boxWidth: '30%',
+        title: 'codigo QR',
+        content: `
+            <div class="row">
+                <div class="col-12">
+                    <label>Elige una accion;</label>
+                </div>
+                <div class="col-12">
+                    <img src="./docs/codigosQR/ropa_productos/${urlImg}"
+                </div>
+            </div>
+        `,
+        type: 'dark',
+        typeAnimated: true,
+        buttons: {
+            confirm: function(button) {
+                mandarImprimir(urlImg)
+            },
+            close: function () {
+            }
+        }
+    });
+})
+
+function mandarImprimir() {
+    console.log("imprimiendo la imagen ./docs/codigosQR/ropa_productos/"+urlImg)
+}
+
 function mostrarRopa () {
     //color de filas
     const celda = document.getElementById("bodyTable");
@@ -53,13 +85,22 @@ function mostrarRopa () {
                             },
                         },
                         data: dataSet,
-                        columnDefs: [{
-                            "targets": 0,
-                            "render": function (data, type, row) {
-                                var checkbox = '<img src="docs/ropa/productos/'+data+'" style="width: 10em;">';
-                                return checkbox;
+                        columnDefs: [
+                            {
+                                "targets": 0,
+                                "render": function (data, type, row) {
+                                    var checkbox = '<img src="docs/ropa/productos/'+data+'" style="width: 10em;">';
+                                    return checkbox;
+                                }
+                            },
+                            {
+                                "targets": 6,
+                                "render": function (data, type, row) {
+                                    var checkbox = '<button class="btnQr" data-nombreImagen='+data+'">Imprimir</button>';
+                                    return checkbox;
+                                }
                             }
-                        }],
+                        ],
                     } );
 
 
