@@ -57,7 +57,7 @@
 							<input class="form-check-input" type="checkbox" value="" name="inputNoCodigo" id="inputNoCodigo">
 							<label class="form-check-label" for="inputNoCodigo">
 								El producto no tiene código
-						</label>
+							</label>
 						</div>
 					</div>
 
@@ -70,11 +70,11 @@
 				<div class="d-flex flex-row w-100">
 					<div class="form-group w-50 pr-3">
 						<label for="inputPiezasPaquete">Piezas por paquete:</label>
-						<input type="text" class="form-control" id="inputPiezasPaquete" name="inputPiezasPaquete" aria-describedby="piezasPaqueteForm" required>
+						<input type="number" min="1" value="0" class="form-control" id="inputPiezasPaquete" name="inputPiezasPaquete" aria-describedby="piezasPaqueteForm" required>
 					</div>
 					<div class="form-group w-50 pl-3">
 						<label for="inputStock">Piezas en existencia:</label>
-						<input type="text" class="form-control" id="inputStock" name="inputStock" aria-describedby="stockForm" required>
+						<input type="number" min="1" value="0" class="form-control" id="inputStock" name="inputStock" aria-describedby="stockForm" required>
 					</div>
 				</div>
 				
@@ -92,47 +92,47 @@
 				<label class="font-weight-bold">Precios</label>
 				<div class="d-flex flex-row w-100">
 					<div class="form-group w-50 pr-3">
-						<label for="inputPrecio">1-2 piezas:</label>
-						<input type="text" class="form-control" id="inputPrecio" name="inputPrecio" inputmode="numeric" aria-describedby="PrecioForm" required>
+						<label for="inputPrecioRango1">1-2 piezas: (Moneda Mexicana)</label>
+						<input type="text" class="form-control" id="inputPrecioRango1" name="inputPrecioRango1" inputmode="numeric" aria-describedby="PrecioForm" required>
 					</div>
 					<div class="form-group w-50 pl-3">
-						<label for="inputPrecioOferta">Precio de oferta:</label>
+						<label for="inputPrecioOferta">Precio de oferta: (Moneda Mexicana)</label>
 						<input type="text" class="form-control" id="inputPrecioOferta" name="inputPrecioOferta" inputmode="numeric" aria-describedby="PrecioForm" required>
 					</div>
 				</div>
 
 				<div class="d-flex flex-row w-100">
 					<div class="form-group w-50 pr-3">
-						<label for="inputPrecioRango2">3-5 piezas:</label>
+						<label for="inputPrecioRango2">3-5 piezas: (Moneda Mexicana)</label>
 						<input type="text" class="form-control" id="inputPrecioRango2" name="inputPrecioRango2" inputmode="numeric" aria-describedby="PrecioRango2Form" required>
 					</div>
 					<div class="form-group w-50 pl-3">
 						<label for="inputFechaInicioOferta">Fecha de inicio de la oferta:</label>
-						<input type="text" class="form-control" id="inputFechaInicioOferta" name="inputFechaInicioOferta" inputmode="numeric" aria-describedby="PrecioForm" required>
+						<input type="date" class="form-control" id="inputFechaInicioOferta" name="inputFechaInicioOferta" inputmode="numeric" aria-describedby="PrecioForm" required>
 					</div>
 				</div>
 
 				<div class="d-flex flex-row w-100">
 					<div class="form-group w-50 pr-3">
-						<label for="inputPrecioRango3">1/2 paquete:</label>
+						<label for="inputPrecioRango3">1/2 paquete: (Moneda Mexicana)</label>
 						<input type="text" class="form-control" id="inputPrecioRango3" name="inputPrecioRango3" inputmode="numeric" aria-describedby="PrecioRango2Form" required>
 					</div>
 					<div class="form-group w-50 pl-3">
 						<label for="inputFechaFinOferta">Fecha de fin de la oferta:</label>
-						<input type="text" class="form-control" id="inputFechaFinOferta" name="inputFechaFinOferta" inputmode="numeric" aria-describedby="PrecioForm" required>
+						<input type="date" class="form-control" id="inputFechaFinOferta" name="inputFechaFinOferta" inputmode="numeric" aria-describedby="PrecioForm" required>
 					</div>
 				</div>
 
 				<div class="d-flex flex-row w-100">
 					<div class="form-group w-50 pr-3">
-						<label for="inputPrecioRango4">1 paquete:</label>
+						<label for="inputPrecioRango4">1 paquete: (Moneda Mexicana)</label>
 						<input type="text" class="form-control" id="inputPrecioRango4" name="inputPrecioRango4" inputmode="numeric" aria-describedby="PrecioRango2Form" required>
 					</div>
 				</div>
 
 				<div class="d-flex flex-row w-100">
 					<div class="form-group w-50 pr-3">
-						<label for="inputPrecioRango5">2 paquetes:</label>
+						<label for="inputPrecioRango5">2 paquetes: (Moneda Mexicana)</label>
 						<input type="text" class="form-control" id="inputPrecioRango5" name="inputPrecioRango5" inputmode="numeric" aria-describedby="PrecioRango2Form" required>
 					</div>
 				</div>
@@ -152,64 +152,6 @@
 		</div>
 	</div>
 
-	<!-- inicia code anterior -->
-	<!--<div class="row p-0 " style=" margin: 2rem 0rem; margin-bottom: 6rem;  justify-content: center;">
-		<div class="col-sm-12 col-md-3 col-lg-3">
-			<img class="img-upload" src="../img/pngtree-image-upload-icon-photo-upload-icon-png-image_2047546.jpg" >
-			<input type="file" placeholder="Subir Imagen">
-		</div>
-		<div class="col-sm-12 col-md-3 col-lg-3">
-			<form id="formularioRegistro">
-				<div class="form-group">
-				  <label for="inputModelo">Modelo:</label>
-				  <input type="text" class="form-control" id="inputModelo" name="inputModelo" aria-describedby="modeloForm" placeholder="Ingresa el modelo de prenda" required>
-				</div>
-
-				<div class="form-group">
-					<label for="inputCodigo">Codigo:</label>
-					
-					<input type="text" class="form-control" id="inputCodigo" name="inputCodigo" aria-describedby="CodigoForm" placeholder="Ingresa el Codigo de prenda">
-					<div class="form-check">
-						<input class="form-check-input" type="checkbox" value="" name="inputNoCodigo" id="inputNoCodigo">
-						<label class="form-check-label" for="inputNoCodigo">
-							No cuenta con un codigo? (Marque esta casilla y se le asignara uno automaticamente)
-						</label>
-					  </div>
-				</div>
-
-				<div class="form-group">
-					<label for="inputCantidad">Cantidad:</label>
-					<input type="number" class="form-control" id="inputCantidad" name="inputCantidad" min="1" aria-describedby="CantidadForm" placeholder="Ingresa la Cantidad en existencia" required>
-				</div>
-
-				<div class="form-group">
-					<label for="inputPrecio">Precio (Moneda Mexicana):</label>
-					<input type="text" class="form-control" id="inputPrecio" name="inputPrecio" inputmode="numeric" aria-describedby="PrecioForm" placeholder="Ingresa el Precio de la prenda" required>
-				</div>
-
-				<div class="form-group">
-					<label for="inputPrecio">Precio de Oferta (Moneda Mexicana):</label>
-					<input type="text" class="form-control" id="inputPrecio-oferta" name="inputPrecio" inputmode="numeric" aria-describedby="PrecioForm" placeholder="Ingresa el Precio de la prenda" required>
-				</div>
-
-				<div class="form-group">
-					<label for="exampleFormControlTextarea1">Alguna descripcion:</label>
-					<textarea class="form-control" id="exampleFormControlTextarea1" name="inputDescripcion"></textarea>
-				</div>
-				
-				<button id="enviarForm" type="button" class="btn btn-primary">Enviar</button>
-				<div class="spinner-border text-primary" role="status">
-					<span class="sr-only">Loading...</span>
-				  </div>
-			  </form>
-		</div>
-		<div class="col-sm-12 col-md-3 col-lg-3">
-			<img class="img-QR" alt="Código QR" id="codigo" src="../img/QR-Code-Generator.webp">
-			<button id="btnDescargar">Descargar</button>
-		</div>
-	</div> 
-	<!-- termina code anterior -->
-
     <script src="../js/jquery-3.6.3.min.js"></script>
     <script src="../vendor/qrious-master/dist/qrious.js"></script>
 	<script src="../vendor/jsQR-master/docs/jsQR.js"></script>
@@ -219,8 +161,11 @@
 
     <script>
 		$( document ).ready(function() {
-			// generarCodigoQR();
-			$('#inputPrecio').on({
+			
+			$( "#inputModelo" ).keyup(function() {
+				generarCodigoQR();
+			});
+			$('#inputPrecioRango1').on({
 				"focus": function (event) {
 					$(event.target).select();
 				},
@@ -232,7 +177,55 @@
 					});
 				}
 			});
-			$('#inputPrecio-oferta').on({
+			$('#inputPrecioOferta').on({
+				"focus": function (event) {
+					$(event.target).select();
+				},
+				"keyup": function (event) {
+					$(event.target).val(function (index, value ) {
+						return value.replace(/\D/g, "")
+									.replace(/([0-9])([0-9]{2})$/, '$1.$2')
+									.replace(/\B(?=(\d{3})+(?!\d)\.?)/g, ",");
+					});
+				}
+			});
+			$('#inputPrecioRango2').on({
+				"focus": function (event) {
+					$(event.target).select();
+				},
+				"keyup": function (event) {
+					$(event.target).val(function (index, value ) {
+						return value.replace(/\D/g, "")
+									.replace(/([0-9])([0-9]{2})$/, '$1.$2')
+									.replace(/\B(?=(\d{3})+(?!\d)\.?)/g, ",");
+					});
+				}
+			});
+			$('#inputPrecioRango3').on({
+				"focus": function (event) {
+					$(event.target).select();
+				},
+				"keyup": function (event) {
+					$(event.target).val(function (index, value ) {
+						return value.replace(/\D/g, "")
+									.replace(/([0-9])([0-9]{2})$/, '$1.$2')
+									.replace(/\B(?=(\d{3})+(?!\d)\.?)/g, ",");
+					});
+				}
+			});
+			$('#inputPrecioRango4').on({
+				"focus": function (event) {
+					$(event.target).select();
+				},
+				"keyup": function (event) {
+					$(event.target).val(function (index, value ) {
+						return value.replace(/\D/g, "")
+									.replace(/([0-9])([0-9]{2})$/, '$1.$2')
+									.replace(/\B(?=(\d{3})+(?!\d)\.?)/g, ",");
+					});
+				}
+			});
+			$('#inputPrecioRango5').on({
 				"focus": function (event) {
 					$(event.target).select();
 				},
@@ -249,73 +242,44 @@
 		$("#enviarForm").on('click', function (e) {
 			e.preventDefault();
 
-			if(
-				$('#inputModelo').val().split(" ").join("") == "" || 
-				$('#inputCodigo').val().split(" ").join("") == ""
-			){
-				
-				$.confirm({
-					boxWidth: '30%',
-					title: 'Datos Incompletos!',
-					content: 'Vuelve a revizar los datos de tu formulario, asegurate que los campos de modelo y codigo esten rellenados.',
-					type: 'red',
-					typeAnimated: true,
-					buttons: {
-						
-						close: function () {
-						}
-					}
-				});
+			if( $('#inputModelo').val().split(" ").join("") == "" ){
+				alertaError(2,'El campo "modelo" es obligatorio*, asegurate que este rellenado.');
 				return 0;
 
-			}else if($('#inputCantidad').val() < 1 ) {
-				$.confirm({
-					boxWidth: '30%',
-					title: 'Datos Incompletos!',
-					content: 'Vuelve a revizar los datos de tu formulario, asegurate que la cantidad sea mayor a 1.',
-					type: 'red',
-					typeAnimated: true,
-					buttons: {
-						
-						close: function () {
-						}
-					}
-				});
+			}
+			var inputPrecioRango1 = parseFloat($('#inputPrecioRango1').val().split(",").join(""));
+			console.log(inputPrecioRango1);
+			if ( inputPrecioRango1 < 1 || isNaN(inputPrecioRango1) ) {
+				alertaError(2, 'El campo "1-2 piezas" es obligatorio, asegurate que el precio sea mayor a 0.00$.');
 				return 0;
-
-			}else if ( parseFloat($('#inputPrecio').val().split(",").join("")) < 1 ) {
-				$.confirm({
-					boxWidth: '30%',
-					title: 'Datos Incompletos!',
-					content: 'Vuelve a revizar los datos de tu formulario, asegurate que el precio sea mayor a 0.00$.',
-					type: 'red',
-					typeAnimated: true,
-					buttons: {
-						
-						close: function () {
-						}
-					}
-				});
+			}
+			var inputPrecioRango1 = parseFloat($('#inputPrecioRango1').val().split(",").join(""));
+			console.log(inputPrecioRango1);
+			if ( inputPrecioRango1 < 1 || isNaN(inputPrecioRango1) ) {
+				alertaError(2, 'El campo "1-2 piezas" es obligatorio, asegurate que el precio sea mayor a 0.00$.');
 				return 0;
-			}else if(parseFloat($('#inputPrecio-oferta').val().split(",").join("")) < 1) {
-				$.confirm({
-					boxWidth: '30%',
-					title: 'Datos Incompletos!',
-					content: 'Vuelve a revizar los datos de tu formulario, asegurate que el precio en oferta sea mayor a 0.00$.',
-					type: 'red',
-					typeAnimated: true,
-					buttons: {
-						
-						close: function () {
-						}
-					}
-				});
 			}
 
 			var miData = new FormData( $('#formularioRegistro')[0] );
 			miData.append("func","agregarProducto");
-			miData.append("inputPrecioConvert",parseFloat($('#inputPrecio').val().split(",").join("")));
-			miData.append("inputPrecio-ofertaConvert",parseFloat($('#inputPrecio-oferta').val().split(",").join("")));
+			if(isNaN(parseFloat($('#inputPrecioOferta').val().split(",").join("")))){ $('#inputPrecioOferta').val('0') }
+			miData.append("inputPrecioOferta-convert",  parseFloat($('#inputPrecioOferta').val().split(",").join("")) );
+
+			if(isNaN(parseFloat($('#inputPrecioRango1').val().split(",").join("")))){ $('#inputPrecioRango1').val('0') }
+			miData.append("inputPrecioRango1-convert",  parseFloat($('#inputPrecioRango1').val().split(",").join("")) );
+
+			if(isNaN(parseFloat($('#inputPrecioRango2').val().split(",").join("")))){ $('#inputPrecioRango2').val('0') }
+			miData.append("inputPrecioRango2-convert",  parseFloat($('#inputPrecioRango2').val().split(",").join("")) );
+
+			if(isNaN(parseFloat($('#inputPrecioRango3').val().split(",").join("")))){ $('#inputPrecioRango3').val('0') }
+			miData.append("inputPrecioRango3-convert",  parseFloat($('#inputPrecioRango3').val().split(",").join("")) );
+
+			if(isNaN(parseFloat($('#inputPrecioRango4').val().split(",").join("")))){ $('#inputPrecioRango4').val('0') }
+			miData.append("inputPrecioRango4-convert",  parseFloat($('#inputPrecioRango4').val().split(",").join("")) );
+
+			if(isNaN(parseFloat($('#inputPrecioRango5').val().split(",").join("")))){ $('#inputPrecioRango5').val('0') }
+			miData.append("inputPrecioRango5-convert",  parseFloat($('#inputPrecioRango5').val().split(",").join("")) );
+
 			
 			$(".spinner-border").show();
 			$("#enviarForm").prop("disabled","true");
@@ -330,61 +294,69 @@
 				success: function (respuesta) { 
 					$(".spinner-border").hide();
 					if(respuesta.status) {
-						$.confirm({
-							boxWidth: '30%',
-							title: 'Bien Hecho!',
-							content: 'Se ha guardado el producto con exito',
-							type: 'green',
-							typeAnimated: true,
-							buttons: {
-								close: function () {
-								}
-							}
-						});
+						alertaExito(1,'Se ha guardado el producto con exito');
 						document.getElementById("formularioRegistro").reset();
 						$("#enviarForm").removeAttr("disabled");
+
 					}else {
-						$.confirm({
-							boxWidth: '30%',
-							title: 'Ocurrio un error inesperado!',
-							content: 'Contacte con el administrador',
-							type: 'red',
-							typeAnimated: true,
-							buttons: {
-								
-								close: function () {
-								}
-							}
-						});
+						alertaError(1,'Contacte con el administrador');
 						$("#enviarForm").removeAttr("disabled");
+
 					}
 				},
 				error: function (e) {
 					console.log("ERROR : ", e);
 					$(".spinner-border").hide();
-					$.confirm({
-						boxWidth: '30%',
-							title: 'Ocurrio un error inesperado!',
-							content: 'Contacte con el administrador',
-							type: 'red',
-							typeAnimated: true,
-							buttons: {
-								
-								close: function () {
-								}
-							}
-					});
+					alertaError(1,'Contacte con el administrador');
 					$("#enviarForm").removeAttr("disabled");
+
 				}
 			})
 		});
+
+		function alertaError (idTitulo, mensaje) {
+			var titulo = '';
+			if ( idTitulo == 1 ) { titulo = 'Ocurrio un error inesperado!'; }
+			if ( idTitulo == 2 ) { titulo = 'Datos Incompletos!'; }
+
+			$.confirm({
+				boxWidth: '30%',
+				title: titulo,
+				content: mensaje,
+				type: 'red',
+				typeAnimated: true,
+				buttons: {
+					
+					close: function () {
+					}
+				}
+			});
+		}
+
+		function alertaExito (idTitulo, mensaje) {
+			var titulo = '';
+			if ( idTitulo == 1 ) { titulo = 'Bien Hecho!'; }
+
+			$.confirm({
+				boxWidth: '30%',
+				title: titulo,
+				content: mensaje,
+				type: 'green',
+				typeAnimated: true,
+				buttons: {
+					
+					close: function () {
+					}
+				}
+			});
+		}
 
 		function generarCodigoQR() {
 			const $imagen = document.querySelector("#codigo"),
 			$boton = document.querySelector("#btnDescargar");
 			new QRious({
 				element: $imagen,
-				value: "DL209", // La URL o el texto a transformar en QR
+				value: $("#inputModelo").val(), // La URL o el texto a transformar en QR
 				size: 500,
 				backgroundAlpha: 100, // 0 para fondo transparente
 				foreground: "#000000", // Color del QR

@@ -19,13 +19,10 @@
         if (
                 empty($_POST["func"]) ||
                 empty($_POST["inputModelo"]) || 
-                empty($_POST["inputCodigo"]) || 
-                empty($_POST["inputCantidad"]) || 
-                empty($_POST["inputPrecioConvert"]) || 
-                empty($_POST["inputPrecio-ofertaConvert"])
+                empty($_POST["inputPrecioRango1"]) 
                 // ($_POST["portada"]) == "undefined"
             ) {
-                $output = json_encode(array('type' => 'errorIncom', 'text' => 'Datos incompletos pequeño fetito :,v'));
+                $output = json_encode(array('type' => 'errorIncom', 'text' => 'Datos incompletos.'));
                 die($output);
             }
     }
@@ -35,20 +32,18 @@
         $idRegreso = 0;
 
         $inputModelo = $_POST["inputModelo"];
-        $inputCodigo = $_POST["inputCodigo"];
-        $inputCantidad = $_POST["inputCantidad"];
-        $inputPrecio = $_POST["inputPrecioConvert"];
-        $inputPrecioOferta = $_POST["inputPrecio-ofertaConvert"];
         $inputDescripcion = $_POST["inputDescripcion"];
+        $inputPiezasPaquete = $_POST["inputPiezasPaquete"];
+        $inputPrecioOferta_convert = $_POST["inputPrecioOferta-convert"];
 
         //consulta insertar la noticia
-        $query = $conexion->query('INSERT INTO productos (id, modelo, codigo, descripcion, cantidad, foto, precio, precioOferta, piezasPaquete, created_at, updated_at, dataQR) VALUES (NULL, "'.$inputModelo.'", "'.$inputCodigo.'", "'.$inputDescripcion.'", '.$inputCantidad.', NULL, '.$inputPrecio.', '.$inputPrecioOferta.', NULL, NULL, NULL, NULL);');
-        if (!$query) {
+        $query_insertProduct = $conexion->query('INSERT INTO productos (id, modelo, codigo, descripcion, cantidad, foto, precio, precioOferta, piezasPaquete, created_at, updated_at, dataQR) VALUES (NULL, "'.$inputModelo.'", NULL, "'.$inputDescripcion.'", NULL, NULL, 0, '.$inputPrecioOferta_convert.', '.$inputPiezasPaquete.', NULL, NULL, NULL);');
+        if (!$query_insertProduct) {
             printf("Error: %s\n", mysqli_error($conexion));
             echo "la db ha fallado :c";
             exit;
         }
-        if ( isset($query) ) {
+        if ( isset($query_insertProduct) ) {
             $idRegreso = $conexion->insert_id;
             $resultados["idRegreso"] = $idRegreso;
             
