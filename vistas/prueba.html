@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Archivo de varias imágenes</title>
+  </head>
+  <body>
+    <canvas id="canvas" width="98" height="326"></canvas>
+    <script>
+      const canvas = document.getElementById("canvas");
+      const context = canvas.getContext("2d");
+      
+      // Cargar la primera imagen
+      const img1 = new Image();
+      img1.src = "qr.jpg";
+      img1.onload = function() {
+        context.drawImage(img1, 0,0,canvas.width,canvas.height/3);
+      };
+      
+      // Cargar la segunda imagen
+      const img2 = new Image();
+      img2.src = "qr.jpg";
+      img2.onload = function() {
+        context.drawImage(img2, 0, canvas.height/3, canvas.width, canvas.height/3);
+      };
+
+      // Cargar la tercer imagen
+      const img3 = new Image();
+      img3.src = "qr.jpg";
+      img3.onload = function() {
+        context.drawImage(img2, 0, (canvas.height/3)*2, canvas.width, canvas.height/3);
+      };
+    </script>
+  </body>
+</html>
+<!-- En este ejemplo, primero creamos un elemento "canvas" en nuestro HTML con un ID de "canvas". Luego, en nuestro archivo JavaScript, obtenemos la referencia a ese elemento "canvas" y su contexto "2d".
+
+Luego, cargamos las dos imágenes que deseamos agregar al archivo utilizando el objeto "Image" y sus propiedades "src" y "onload". Cuando se cargan las imágenes, utilizamos la función "drawImage()" para dibujar cada imagen en el "canvas". La función "drawImage()" toma varios parámetros, como la imagen a dibujar, la posición inicial y el tamaño.
+
+En este ejemplo, estamos dibujando la primera imagen en el lado izquierdo del "canvas" y la segunda imagen en el lado derecho, dividiendo el "canvas" en dos partes iguales horizontalmente.
+
+Al finalizar, tendrás un archivo con ambas imágenes dibujadas en el "canvas". -->
+
+
+
+
+

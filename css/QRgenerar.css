@@ -35,6 +35,15 @@ input{
     padding-top: .5rem;
     padding-bottom: .5rem;
 }
+#btnImprimir{
+    border: none;
+    margin-top: 2rem;
+    color:white;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
 .img-QR {
     width: 50%;
     height: auto;
