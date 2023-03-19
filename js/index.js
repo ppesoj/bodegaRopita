@@ -23,7 +23,7 @@ $(document).on("click", ".btnQr", function(e) {
         type: 'dark',
         typeAnimated: true,
         buttons: {
-            confirm: function(button) {
+            imprimir: function(button) {
                 mandarImprimir(urlImg)
             },
             close: function () {
