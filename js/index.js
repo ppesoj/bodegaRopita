@@ -17,7 +17,7 @@ $(document).on("click", ".btnQr", function(e) {
                     <label>Elige una accion;</label>
                 </div>
                 <div class="col-12">
-                    <img src="./docs/codigosQR/ropa_productos/${urlImg}"
+                    <img id="fotoQR" src="./docs/codigosQR/ropa_productos/${urlImg}"
                 </div>
             </div>
         `,
@@ -33,10 +33,44 @@ $(document).on("click", ".btnQr", function(e) {
     });
 })
 
+function clonarFoto(){
+    // get the image element
+    const originalImage = document.getElementById("fotoQR");
+    // create a canvas element
+    const canvas = document.createElement('canvas');
+    canvas.width = originalImage.width*1.6;
+    canvas.height = originalImage.height*1.6;
+    // get the canvas context
+    const context = canvas.getContext('2d');
+    // draw the original image onto the canvas
+    context.drawImage(originalImage, 0, 0);
+    // create a new image element from the canvas AQUII
+    const newImage = new Image();
+    newImage.src = canvas.toDataURL('image/png');
+
+    let url = canvas.toDataURL('image/png');
+    var miData = new FormData();
+    miData.append("imgQRN", url);
+
+    $.ajax({
+        url: "controlador/clonar.php",
+        type: "POST",
+        contentType: false,
+        processData: false,
+        cache: false,
+        data: miData,
+    })
+}
+
 function mandarImprimir() {
+    clonarFoto();
+    // './docs/codigosQR/ropa_productos/qr.jpg'
     console.log(rutaImg)
+    
     printJS({
-        printable: [rutaImg, rutaImg, rutaImg],
+        printable: ['./docs/codigosQR/ropa_productos_impresiones/qr.jpg',
+        './docs/codigosQR/ropa_productos_impresiones/qr.jpg',
+        './docs/codigosQR/ropa_productos_impresiones/qr.jpg'],
         type: 'image',
         imageStyle: 'width:100%;margin-bottom:10px;'
     })
@@ -103,7 +137,7 @@ function mostrarRopa () {
                             {
                                 "targets": 6,
                                 "render": function (data, type, row) {
-                                    var checkbox = '<button class="btnQr" data-nombreImagen='+data+'">Imprimir</button>';
+                                    var checkbox = '<button id="btnQR" class="btnQr" data-nombreImagen='+data+'">Imprimir</button>';
                                     return checkbox;
                                 }
                             }

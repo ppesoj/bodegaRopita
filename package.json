@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "print-js": "^1.6.0"
+    "print-js": "^1.6.0",
+    "prntr": "^2.0.18"
   }
 }
