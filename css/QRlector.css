@@ -15,12 +15,6 @@ body {
     font-size: 40px;
   }
 
-  #contenido {
-    padding-top: 2rem !important;
-    padding-left: 6rem !important;
-    padding-right: 6rem !important;
-  }
-
   #loadingMessage {
     text-align: center;
     padding: 40px;
@@ -29,16 +23,42 @@ body {
 
   #canvas {
     width: 100%;
+    border-radius: 12px;
   }
 
   #output {
+    display: flex;
     background-color: #F2D8F2;
-    padding: 1rem !important;
+    padding: 2rem !important;
+    align-items: center;
+    flex-flow: column;
+    border-radius: 12px;
   }
 
-  #output div {
-    padding-bottom: 10px;
-    word-wrap: break-word;
+  .outputMessage {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 1rem 0px;
+    align-self: center;
+  }
+
+  #output .datosSalida {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+
+  #output .datosSalida .datosEncontrados label {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  #output .datosSalida .datosEncontrados span {
+    font-size: 20px;
+    font-weight: 600;
+    color: red;
+    margin-left: 12px;
   }
 
   #noQRFound {
@@ -46,4 +66,15 @@ body {
   }
   #imagenResultado{
     width: 50%;
+  }
+
+  .contenido {
+    min-height: 80vh;
+    align-items: center;
+  }
+
+  @media (max-width:772px) {
+    #imagenResultado {
+      width: 80%;
+    }
   }

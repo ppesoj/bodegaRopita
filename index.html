@@ -3,7 +3,7 @@
    <head>
         <meta charset="utf-8">
         <title>Ropita</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="icon" href="img/favicon.png" type="image/png" />
       
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -21,40 +21,48 @@
    </head>
    <body>
     <!--Navbar-->
-    <div id="menu" class="navbar p-0 m-0 mb-3">
-        <div class="row container-fluid" style="padding: 0 !important">
-            <div class="nav-item col-6" style="padding-left: 6rem;">
-              <img src="img/logo.png" class="logo img-fluid w-25 p-1">
-            </div>
-            <div class="navbar justify-content-end col-4 m-auto">
-                <div class="nav-item"> 
-                    <a class="nav-link text-white" href="./index.html"><i class="fa fa-list-alt" aria-hidden="true"></i> Registros</a>
-                </div>
-                <div class="nav-item"> 
-                    <a class="nav-link text-white" href="vistas/QRlector.html"><i class="fa-solid fa-qrcode"></i> Buscar QR</a>
-                </div>
-                <div class="nav-item"> 
-                    <a class="nav-link text-white" href="vistas/QRgenerar.html"><i class="fa-solid fa-plus"></i>Nuevo producto</a>
-                </div>
-            </div>
+    <nav class="navbar navbar-expand-lg justify-content-between">
+        <a class="navbar-brand">
+            <img src="img/logo.png" class="logo img-fluid w-25 p-1">
+        </a>
+        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fa-solid fa-bars"></i>
+          </button> -->
+        <div class="" id="navbarText">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link text-white" href="./index.html"><i class="fa fa-list-alt" aria-hidden="true"></i> Registros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="vistas/QRlector.html"><i class="fa-solid fa-qrcode"></i> Buscar QR</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="vistas/QRgenerar.html"><i class="fa-solid fa-plus"></i>Nuevo producto</a>
+              </li>
+            </ul>
+          </div>
+      </nav>
+    
+    <div class="row m-0 p-0">
+        <div class="col-lg-12">
+            <table id="myTable" class="display hover ">
+                <thead class="text-white" style="background: #D932AC;">
+                    <tr>
+                        <th>Foto</th>
+                        <th>Modelo</th>
+                        <th>Código</th>
+                        <th>Cantidad</th>
+                        <th>Precio</th>
+                        <th>Precio de oferta</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="bodyTable" style="background: #EEF2E9;">
+                    
+                </tbody>
+            </table>
         </div>
     </div>
-    <table id="myTable" class="display hover ">
-        <thead class="text-white" style="background: #D932AC;">
-            <tr>
-                <th>Foto</th>
-                <th>Modelo</th>
-                <th>Código</th>
-                <th>Cantidad</th>
-                <th>Precio</th>
-                <th>Precio de oferta</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody id="bodyTable" style="background: #EEF2E9;">
-            
-        </tbody>
-    </table>
 
     <script type="text/javascript" src="js/jquery-3.6.3.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.3/js/jquery.dataTables.js"></script>

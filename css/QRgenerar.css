@@ -7,9 +7,9 @@ input{
 }
 
 #contenido{
-    padding-top: 2rem !important;
-    padding-left: 6rem !important;
-    padding-right: 6rem !important;
+    padding-top: 2rem;
+    padding-left: 6rem;
+    padding-right: 6rem;
 }
 
 .form-control{
@@ -23,8 +23,9 @@ input{
 }
 
 #sectionQR{
-    display: grid;
+    display: block;
     height: 100%;
+    text-align: center;
 }
 #btnDescargar{
     border: none;
@@ -34,6 +35,8 @@ input{
     padding-right: 2rem;
     padding-top: .5rem;
     padding-bottom: .5rem;
+    display: block;
+    position: relative;
 }
 #btnImprimir{
     border: none;
@@ -52,6 +55,14 @@ input{
 .spinner-border {
     display: none;
 }
+
+.subSeccion {
+    font-size: 20px;
+    text-align: center;
+    width: 100%;
+    margin: 2rem 0px;
+}
+
 #enviarForm{
     margin-left: 25% !important;
     border: none;
@@ -59,4 +70,20 @@ input{
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     color: white;
+}
+@media (max-width:992px) {
+    #contenido {
+        flex-direction: column-reverse;
+    }
+    .img-QR {
+        width: 12rem;
+    }
+
+}
+@media (max-width:545px) {
+    #contenido{
+        padding-top: 0rem;
+        padding-left: 0rem;
+        padding-right: 0rem;
+    }
 }

@@ -1,8 +1,19 @@
 
+:root {
+    --color-base:#D932AC;
+}
+
 html {
     scroll-behavior: smooth;
     padding: 0!important;
     margin: 0!important;
+}
+
+.btn-sm {
+    font-weight: 600;
+}
+.btn-sm .fa-solid {
+    margin-right: 6px;
 }
 
 #menu{
@@ -11,35 +22,87 @@ html {
 }
 
 .rosaFuerte{
-    background: #D932AC
+    background: var(--color-base)
 }
 
 .navbar{
-    background: #D932AC;
+    background: var(--color-base);
     width: auto;
 }
 #myTable {
     width: 100%!important;
 }
 
-.dataTables_length {
-    margin-bottom: 2rem;
+.navbar-collapse {
+    justify-content: right;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    margin: 0px 14px;
+    font-size: 1.1rem;
 }
 
 .dataTables_wrapper {
     padding: 6rem;
     padding-top: 18px;
+    margin-bottom: 4rem;
 }
 
-@media screen and (max-width:900px){
-    .logo{
-        width: 50%!important;
+.navbar-toggler {
+    font-size: 2.3rem;
+    color: var(--color-base);
+    border: 1px solid white;
+    padding: 5px 10px;
+    background-color: white;
+}
+
+.tableFoto {
+    width: 10em;
+}
+
+.dataTables_filter, .dataTables_length {
+    margin: 2rem 0px;
+}
+
+@media screen and (max-width:992px){
+    .navbar-nav {
+        flex-direction: initial;
+        justify-content: right;
     }
-    .dataTables_length {
+    #navbarText {
+        width: 100%;
+    }
+    .dataTables_length, .myTable_length {
         margin-bottom: 0;
         width: fit-content;
     }
     .dataTables_wrapper {
         padding: 0;
+    }
+    
+}
+
+@media (max-width:772px) {
+    
+    #myTable {
+        overflow: scroll;
+        display: block;
+    }
+    .tableFoto {
+        width: 4em;
+    }
+    .dataTables_filter, .dataTables_length {
+        display: flex;
+        margin: auto;
+        width: 100%;
+        justify-content: left;
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width:540px) {
+    .navbar-expand-lg .navbar-nav .nav-link {
+        font-size: 0.8rem;
     }
 }

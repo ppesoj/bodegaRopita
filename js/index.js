@@ -113,6 +113,7 @@ function mostrarRopa () {
                     console.log(dataSet);
                     $('#myTable').DataTable( {
                         language: {
+                            responsive: true,
                             searchPlaceholder: 'Buscar...',
                             search: '',
                             lengthMenu: 'Mostrar _MENU_ registros por página',
@@ -130,14 +131,14 @@ function mostrarRopa () {
                             {
                                 "targets": 0,
                                 "render": function (data, type, row) {
-                                    var checkbox = '<img src="docs/ropa/productos/'+data+'" style="width: 10em;">';
+                                    var checkbox = '<img class="tableFoto" src="docs/ropa/productos/'+data+'">';
                                     return checkbox;
                                 }
                             },
                             {
                                 "targets": 6,
                                 "render": function (data, type, row) {
-                                    var checkbox = '<button id="btnQR" class="btnQr" data-nombreImagen='+data+'">Imprimir</button>';
+                                    var checkbox = '<button type="button" id="btnQR" data-nombreImagen='+data+'" class="btnQr btn btn-primary btn-sm"><i class="fa-solid fa-print"></i>Imprimir</button>';
                                     return checkbox;
                                 }
                             }
