@@ -36,17 +36,40 @@
         $inputPiezasPaquete = $_POST["inputPiezasPaquete"];
         $inputPrecioOferta_convert = $_POST["inputPrecioOferta-convert"];
 
+        $inputPrecioRango1_convert = $_POST["inputPrecioRango1-convert"];
+        // $inputPrecioRango2_convert = $_POST["inputPrecioRango2-convert"];
+        $inputPrecioRango3_convert = $_POST["inputPrecioRango3-convert"];
+        $inputPrecioRango4_convert = $_POST["inputPrecioRango4-convert"];
+        $inputPrecioRango5_convert = $_POST["inputPrecioRango5-convert"];
 
-        //consulta insertar la noticia
-        $query_insertProduct = $conexion->query('INSERT INTO productos (id, modelo, codigo, descripcion, cantidad, foto, precio, precioOferta, piezasPaquete, created_at, updated_at, dataQR) VALUES (NULL, "'.$inputModelo.'", NULL, "'.$inputDescripcion.'", NULL, NULL, 0, '.$inputPrecioOferta_convert.', '.$inputPiezasPaquete.', NULL, NULL, NULL);');
+        //agrego la marca primero
+        $idRegreso_marca = NULL;
+        if (!empty($_POST['inputMarca'])) {
+            $inputMarca = $_POST['inputMarca'];
+            $query_insertMarca = $conexion->query("INSERT INTO marcas (id, nombre, logo, origen, created_at, updated_at ) VALUES (NULL, '$inputMarca', NULL, '', NULL, NULL);");
+            $idRegreso_marca = $conexion->insert_id;
+        }else {
+            
+        }
+
+        //consulta insertar el producto
+        $query_insertProduct = $conexion->query('INSERT INTO productos (id, modelo, codigo, descripcion, cantidad, foto, id_marca, precio, precioMayoreo, piezasPaquete, created_at, updated_at, dataQR) VALUES (NULL, "'.$inputModelo.'", NULL, "'.$inputDescripcion.'", NULL, NULL, '.$idRegreso_marca.', 0, '.$inputPrecioOferta_convert.', '.$inputPiezasPaquete.', NULL, NULL, NULL);');
         if (!$query_insertProduct) {
             printf("Error: %s\n", mysqli_error($conexion));
             echo "la db ha fallado :c";
             exit;
         }
+        
+        //si el producto fue insertado
         if ( isset($query_insertProduct) ) {
-            $idRegreso = $conexion->insert_id;
+            $idRegreso = $conexion->insert_id; //el id nuevo que retorna este nuevo registro
             $resultados["idRegreso"] = $idRegreso;
+
+
+            //inserto sus precios en la tabla de precios
+            $query_insertPreciosRangos = $conexion->query("INSERT INTO precioproductos (id, id_producto, precioRango1, precioRango2, precioRango3, precioRango4, precioRango5, precioPromocion, inicioPromocion, finPromocion, created_at, updated_at ) 
+            VALUES (NULL, '$idRegreso', $inputPrecioRango1_convert, $inputPrecioOferta_convert, $inputPrecioRango3_convert, $inputPrecioRango4_convert, $inputPrecioRango5_convert, 0, NULL, NULL, NULL ,NULL );");
+
 
             //guardando en la db la imagen
             $data = $_POST["imgQRN"];

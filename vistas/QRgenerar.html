@@ -72,7 +72,7 @@
 						<div class="col-sm-12 col-md-6 col-lg-6">
 							<div class="form-group ">
 								<label for="inputMarca">Marca:</label>
-								<input hidden type="text" class="form-control" id="inputMarca" name="inputMarca" aria-describedby="marcaForm" required>
+								<input type="text" class="form-control" id="inputMarca" name="inputMarca" aria-describedby="marcaForm" required>
 							</div>
 						</div>
 					</div>
@@ -344,22 +344,22 @@
 			miData.append("portada",JSON.stringify(objPortada));
 
 			miData.append("func","agregarProducto");
-			if(isNaN(parseFloat($('#inputPrecioOferta').val().split(",").join("")))){ $('#inputPrecioOferta').val('0') }
+			if(isNaN(parseFloat($('#inputPrecioOferta').val().split(",").join("")))){ $('#inputPrecioOferta').val('0') } // este es precio rango 2
 			miData.append("inputPrecioOferta-convert",  parseFloat($('#inputPrecioOferta').val().split(",").join("")) );
 
-			if(isNaN(parseFloat($('#inputPrecioRango1').val().split(",").join("")))){ $('#inputPrecioRango1').val('0') }
+			if(isNaN(parseFloat($('#inputPrecioRango1').val().split(",").join("")))){ $('#inputPrecioRango1').val('0') } // este es precio rango 1
 			miData.append("inputPrecioRango1-convert",  parseFloat($('#inputPrecioRango1').val().split(",").join("")) );
 
-			if(isNaN(parseFloat($('#inputPrecioRango2').val().split(",").join("")))){ $('#inputPrecioRango2').val('0') }
+			if(isNaN(parseFloat($('#inputPrecioRango2').val().split(",").join("")))){ $('#inputPrecioRango2').val('0') } // este es precio rango 3/5 piezas
 			miData.append("inputPrecioRango2-convert",  parseFloat($('#inputPrecioRango2').val().split(",").join("")) );
 
-			if(isNaN(parseFloat($('#inputPrecioRango3').val().split(",").join("")))){ $('#inputPrecioRango3').val('0') }
+			if(isNaN(parseFloat($('#inputPrecioRango3').val().split(",").join("")))){ $('#inputPrecioRango3').val('0') } // este es precio rango 1/2 paquete
 			miData.append("inputPrecioRango3-convert",  parseFloat($('#inputPrecioRango3').val().split(",").join("")) );
 
-			if(isNaN(parseFloat($('#inputPrecioRango4').val().split(",").join("")))){ $('#inputPrecioRango4').val('0') }
+			if(isNaN(parseFloat($('#inputPrecioRango4').val().split(",").join("")))){ $('#inputPrecioRango4').val('0') } // este es precio 1 paquete
 			miData.append("inputPrecioRango4-convert",  parseFloat($('#inputPrecioRango4').val().split(",").join("")) );
 
-			if(isNaN(parseFloat($('#inputPrecioRango5').val().split(",").join("")))){ $('#inputPrecioRango5').val('0') }
+			if(isNaN(parseFloat($('#inputPrecioRango5').val().split(",").join("")))){ $('#inputPrecioRango5').val('0') } // este es precio 2 paquetes
 			miData.append("inputPrecioRango5-convert",  parseFloat($('#inputPrecioRango5').val().split(",").join("")) );
 
 
