@@ -124,19 +124,19 @@
 					<div class="row">
 						<div class="col-sm-12 col-md-6 col-lg-6">
 							<div class="form-group ">
-								<label for="inputPrecioRango1">1-2 piezas: (Moneda Mexicana)</label>
+								<label for="inputPrecioRango1">Rango 1 (Precio menudeo) </label>
 								<input type="text" class="form-control" id="inputPrecioRango1" name="inputPrecioRango1" inputmode="numeric" aria-describedby="PrecioForm" required>
 							</div>
 						</div>
 						<div class="col-sm-12 col-md-6 col-lg-6">
 							<div class="form-group ">
-								<label for="inputPrecioOferta">Precio de oferta: (Moneda Mexicana)</label>
+								<label for="inputPrecioOferta">Rango 2 (Precio mayoreo) </label>
 								<input type="text" class="form-control" id="inputPrecioOferta" name="inputPrecioOferta" inputmode="numeric" aria-describedby="PrecioForm" required>
 							</div>
 						</div>
 					</div>
 					
-					<div class="row">
+					<div class="row hidden">
 						<div class="col-sm-12 col-md-6 col-lg-6">
 							<div class="form-group ">
 								<label for="inputPrecioRango2">3-5 piezas: (Moneda Mexicana)</label>
@@ -151,14 +151,14 @@
 						</div>
 					</div>
 
-					<div class="row">
+					<div class="row hidden">
 						<div class="col-sm-12 col-md-6 col-lg-6">
 							<div class="form-group ">
 								<label for="inputPrecioRango3">1/2 paquete: (Moneda Mexicana)</label>
 								<input type="text" class="form-control" id="inputPrecioRango3" name="inputPrecioRango3" inputmode="numeric" aria-describedby="PrecioRango2Form" required>
 							</div>
 						</div>
-						<div class="col-sm-12 col-md-6 col-lg-6">
+						<div class="col-sm-12 col-md-6 col-lg-6 hidden">
 							<div class="form-group ">
 								<label for="inputFechaFinOferta">Fecha de fin de la oferta:</label>
 								<input type="date" class="form-control" id="inputFechaFinOferta" name="inputFechaFinOferta" inputmode="numeric" aria-describedby="PrecioForm" required>
@@ -166,7 +166,7 @@
 						</div>
 					</div>
 
-					<div class="row">
+					<div class="row hidden">
 						<div class="col-sm-12 col-md-6 col-lg-6">
 							<div class="form-group ">
 								<label for="inputPrecioRango4">1 paquete: (Moneda Mexicana)</label>
@@ -177,7 +177,7 @@
 						</div>
 					</div>
 					
-					<div class="row">
+					<div class="row hidden">
 						<div class="col-sm-12 col-md-6 col-lg-6">
 							<div class="form-group ">
 								<label for="inputPrecioRango5">2 paquetes: (Moneda Mexicana)</label>
@@ -188,7 +188,7 @@
 						</div>
 					</div>
 
-					<div class="row">
+					<div class="row hidden">
 						<div class="col-sm-12 col-md-12 col-lg-12">
 							<button id="enviarForm" type="button" class="rosaFuerte mx-auto w-50">Guardar</button>
 							<div class="spinner-border text-primary" role="status">
