@@ -136,7 +136,7 @@ function mostrarRopa () {
                                 }
                             },
                             {
-                                "targets": 6,
+                                "targets": 11,
                                 "render": function (data, type, row) {
                                     var checkbox = '<button type="button" id="btnQR" data-nombreImagen='+data+'" class="btnQr btn btn-primary btn-sm"><i class="fa-solid fa-print"></i>Imprimir</button>';
                                     return checkbox;

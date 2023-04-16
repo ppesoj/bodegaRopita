@@ -11,7 +11,11 @@
 
 
     if($accionCatalogo == "mostrarRopa") {
-        $recoger = "SELECT foto, modelo, codigo, cantidad, precio, precioMayoreo, dataQR  FROM productos;";
+
+        $recoger = "SELECT foto, modelo, cantidad, marcas.nombre AS marcaNombre, precio, precioMayoreo, precioRango1, precioRango2, precioRango3, precioRango4, precioRango5, dataQR  FROM productos
+        LEFT JOIN marcas ON marcas.id = productos.id_marca
+        LEFT JOIN precioproductos ON precioproductos.id_producto = productos.id;";
+
         $nvConexion = nuevaConexion();
         $query_obtener = mysqli_query($nvConexion, $recoger);
         if (!$query_obtener) {

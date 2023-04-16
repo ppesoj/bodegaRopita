@@ -16,6 +16,10 @@ html {
     margin-right: 6px;
 }
 
+.btnQr {
+    font-size: 12px;
+}
+
 #menu{
     padding-top: 0.5rem !important;
     padding-bottom: 0.5rem !important;
