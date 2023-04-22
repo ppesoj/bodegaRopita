@@ -103,7 +103,7 @@ function mostrarRopa () {
             if(respuesta["status"]) {
                 console.log(respuesta)
 
-                //insertar la ropita a la tabla               
+                //insertar los articulos en la tabla               
                     var objNoticias = respuesta;
                     const dataSet = [];
                     Object.keys(objNoticias.data).forEach((key, index) => {
@@ -136,7 +136,7 @@ function mostrarRopa () {
                                 }
                             },
                             {
-                                "targets": 11,
+                                "targets": 8,
                                 "render": function (data, type, row) {
                                     var checkbox = '<button type="button" id="btnQR" data-nombreImagen='+data+'" class="btnQr btn btn-primary btn-sm"><i class="fa-solid fa-print"></i>Imprimir</button>';
                                     return checkbox;

@@ -6,8 +6,6 @@
     var outputContainer = document.getElementById("output");
     var outputMessage = document.getElementById("outputMessage");
     var outputData = document.getElementById("outputData");
-    var precioOferta = document.getElementById("precioOferta");
-    var precioRango1 = document.getElementById("precioRango1");
     var imagenResultado = document.getElementById("imagenResultado");
 
     function drawLine(begin, end, color) {
@@ -68,15 +66,20 @@
             processData: false,
             cache: false,
             success: function (respuesta) {
+              console.log(respuesta)
                 if(respuesta["status"]) {
                     outputMessage.hidden = true;
                     outputData.parentElement.hidden = false;
                     outputData.innerText = codigo;
-                    precioOferta.parentElement.hidden = false;
-                    precioOferta.innerText = respuesta.data[0].precioOferta;
-                    precioRango1.parentElement.hidden = false;
-                    precioRango1.innerText = respuesta.data[0].precio;
                     imagenResultado.setAttribute("src", "../docs/ropa/productos/"+respuesta.data[0].foto);
+
+                    $('.datosEncontrados').removeAttr('hidden');
+
+                    $('#menudeo').html(respuesta.data[0].precioMenudeo);
+                    $('#mayoreo').html(respuesta.data[0].precioMayoreo);
+                    $('#12paquete').html(respuesta.data[0]['1_2paquete']);
+                    $('#1paquete').html(respuesta.data[0]['1paquete']);
+
                 }else {
                     console.log("Hubo un error en el servidor");
                 }

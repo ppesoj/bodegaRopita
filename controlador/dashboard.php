@@ -33,7 +33,7 @@
 
         $inputModelo = $_POST["inputModelo"];
         $inputDescripcion = $_POST["inputDescripcion"];
-        $inputPiezasPaquete = $_POST["inputPiezasPaquete"];
+        // $inputPiezasPaquete = $_POST["inputPiezasPaquete"]
         $inputPrecioOferta_convert = $_POST["inputPrecioOferta-convert"];
 
         $inputPrecioRango1_convert = $_POST["inputPrecioRango1-convert"];
@@ -53,7 +53,7 @@
         }
 
         //consulta insertar el producto
-        $query_insertProduct = $conexion->query('INSERT INTO productos (id, modelo, codigo, descripcion, cantidad, foto, id_marca, precio, precioMayoreo, piezasPaquete, created_at, updated_at, dataQR) VALUES (NULL, "'.$inputModelo.'", NULL, "'.$inputDescripcion.'", NULL, NULL, '.$idRegreso_marca.', 0, '.$inputPrecioOferta_convert.', '.$inputPiezasPaquete.', NULL, NULL, NULL);');
+        $query_insertProduct = $conexion->query('INSERT INTO productos (id, modelo, codigo, descripcion, cantidad, foto, id_marca, precioMenudeo, precioMayoreo, piezasPaquete, created_at, updated_at, dataQR) VALUES (NULL, "'.$inputModelo.'", NULL, "'.$inputDescripcion.'", NULL, NULL, '.$idRegreso_marca.', 0, '.$inputPrecioOferta_convert.', '.$inputPiezasPaquete.', NULL, NULL, NULL);');
         if (!$query_insertProduct) {
             printf("Error: %s\n", mysqli_error($conexion));
             echo "la db ha fallado :c";
@@ -67,7 +67,7 @@
 
 
             //inserto sus precios en la tabla de precios
-            $query_insertPreciosRangos = $conexion->query("INSERT INTO precioproductos (id, id_producto, precioRango1, precioRango2, precioRango3, precioRango4, precioRango5, precioPromocion, inicioPromocion, finPromocion, created_at, updated_at ) 
+            $query_insertPreciosRangos = $conexion->query("INSERT INTO precioproductos (id, id_producto, precioMenudeo, precioMayoreo, 1_2paquete, 1paquete, 2paquetes, precioPromocion, inicioPromocion, finPromocion, created_at, updated_at ) 
             VALUES (NULL, '$idRegreso', $inputPrecioRango1_convert, $inputPrecioOferta_convert, $inputPrecioRango3_convert, $inputPrecioRango4_convert, $inputPrecioRango5_convert, 0, NULL, NULL, NULL ,NULL );");
 
 
