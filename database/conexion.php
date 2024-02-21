@@ -1,5 +1,5 @@
 <?php
-    $conexion = "127.0.0.1";
+        $conexion = "127.0.0.1";
         $user = "root";
         $pass = "12345";
         $server = "localhost";
@@ -8,7 +8,9 @@
         $conexion = new mysqli($server,$user,$pass,$db);
         if($conexion->connect_errno) {
             die ("La conexion ha sido rechazada por el servidor ".$conexion->connect_errno);
-        }else {  }
+        }else {  
+            
+        }
 
         function nuevaConexion () {
             global $user;
