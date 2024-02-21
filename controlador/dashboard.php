@@ -37,7 +37,7 @@
         $inputPrecioOferta_convert = $_POST["inputPrecioOferta-convert"];
 
         $inputPrecioRango1_convert = $_POST["inputPrecioRango1-convert"];
-        // $inputPrecioRango2_convert = $_POST["inputPrecioRango2-convert"];
+        $inputPrecioRango2_convert = $_POST["inputPrecioRango2-convert"];
         $inputPrecioRango3_convert = $_POST["inputPrecioRango3-convert"];
         $inputPrecioRango4_convert = $_POST["inputPrecioRango4-convert"];
         $inputPrecioRango5_convert = $_POST["inputPrecioRango5-convert"];
@@ -68,7 +68,7 @@
 
             //inserto sus precios en la tabla de precios
             $query_insertPreciosRangos = $conexion->query("INSERT INTO precioproductos (id, id_producto, precioMenudeo, precioMayoreo, 1_2paquete, 1paquete, 2paquetes, precioPromocion, inicioPromocion, finPromocion, created_at, updated_at ) 
-            VALUES (NULL, '$idRegreso', $inputPrecioRango1_convert, $inputPrecioOferta_convert, $inputPrecioRango3_convert, $inputPrecioRango4_convert, $inputPrecioRango5_convert, 0, NULL, NULL, NULL ,NULL );");
+            VALUES (NULL, '$idRegreso', $inputPrecioRango1_convert, $inputPrecioRango2_convert, $inputPrecioRango3_convert, $inputPrecioRango4_convert, $inputPrecioRango5_convert, $inputPrecioOferta_convert, NULL, NULL, NULL ,NULL );");
 
 
             //guardando en la db la imagen
